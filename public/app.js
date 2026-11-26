@@ -46,7 +46,7 @@ function renderIdeaBrief(investigation) {
   $('#idea-brief').innerHTML = `
     <span class="eyebrow">Current survivor</span>
     <h3>${escapeHtml(idea.name)}</h3>
-    <nav class="brief-links" aria-label="Case file sections"><a href="#${escapeHtml(idea.transcriptAnchor)}">Full transcript</a><a href="#evidence-ledger">Evidence ledger</a><a href="#${escapeHtml(idea.planAnchor)}">Business plan</a><a href="#third-chair">Challenge</a></nav>
+    <nav class="brief-links" aria-label="Case file sections"><a href="#${escapeHtml(idea.transcriptAnchor)}">Full transcript</a><a href="#evidence-ledger">Evidence ledger</a><a href="#failed-arguments">Failed arguments</a><a href="#${escapeHtml(idea.planAnchor)}">Business plan</a><a href="#third-chair">Challenge</a></nav>
     ${rows.map(([label, text]) => `<div class="brief-row"><span>${escapeHtml(label)}</span><p>${escapeHtml(text)}</p></div>`).join('')}`;
 }
 
@@ -87,6 +87,20 @@ function renderVerdict(investigation) {
   $('#verdict-card').innerHTML = `<span class="eyebrow">End of discussion</span><h3 id="verdict-title">${escapeHtml(verdict.decision)}</h3><p class="verdict-summary">${escapeHtml(verdict.summary)}</p><div class="verdict-grid"><div><span>Why</span><p>${escapeHtml(verdict.why)}</p></div><div><span>Next gate</span><p>${escapeHtml(verdict.nextGate)}</p></div></div><a class="text-link" href="#third-chair">Challenge the unresolved assumption ↓</a>`;
 }
 
+function renderFailedArguments(investigation) {
+  const argumentsList = investigation.failedArguments || [];
+  $('#failed-argument-list').innerHTML = argumentsList.map((argument, index) => `
+    <article class="failed-argument">
+      <div class="failed-index">${String(index + 1).padStart(2, '0')}</div>
+      <div>
+        <span class="failed-outcome">${escapeHtml(argument.outcome)}</span>
+        <h4>${escapeHtml(argument.title)}</h4>
+        <p>${escapeHtml(argument.reason)}</p>
+        <div class="failed-links"><span>Proposed by ${escapeHtml(argument.proposedBy)}</span>${argument.turns.map(turn => `<a href="#turn-${turn}">Turn ${String(turn).padStart(2, '0')}</a>`).join('')}${argument.claimIds.map(id => `<a href="#evidence-${escapeHtml(id)}">${escapeHtml(id.toUpperCase())}</a>`).join('')}</div>
+      </div>
+    </article>`).join('');
+}
+
 function renderBusinessPlan(investigation) {
   const plan = investigation.businessPlan;
   $('#plan-notice').textContent = plan.notice;
@@ -99,10 +113,23 @@ function renderBoard(investigations) {
     return `
       <article class="idea-card" data-country="${escapeHtml(investigation.country)}" data-state="${escapeHtml(idea.state)}">
         <div><span class="number">${escapeHtml(investigation.number)}</span><p>${escapeHtml(investigation.country)}<br>${escapeHtml(investigation.industry)}</p></div>
-        <div><div class="chips"><span class="chip signal-chip">${escapeHtml(idea.state)}</span><span class="chip">Confidence ${escapeHtml(investigation.confidence)}%</span><span class="chip">${investigation.claims.length} sources</span></div><h3>${escapeHtml(idea.name)}</h3><p>${escapeHtml(investigation.verdict.summary)}</p><nav class="board-links" aria-label="${escapeHtml(idea.name)} case file"><a href="?investigation=${encodeURIComponent(investigation.id)}#${escapeHtml(idea.transcriptAnchor)}">Transcript</a><a href="?investigation=${encodeURIComponent(investigation.id)}#evidence-ledger">Evidence</a><a href="?investigation=${encodeURIComponent(investigation.id)}#${escapeHtml(idea.planAnchor)}">Business plan</a><a href="?investigation=${encodeURIComponent(investigation.id)}#third-chair">Third Chair</a></nav></div>
+        <div><div class="chips"><span class="chip signal-chip">${escapeHtml(idea.state)}</span><span class="chip">Confidence ${escapeHtml(investigation.confidence)}%</span><span class="chip">${investigation.claims.length} sources</span></div><h3>${escapeHtml(idea.name)}</h3><p>${escapeHtml(investigation.verdict.summary)}</p><nav class="board-links" aria-label="${escapeHtml(idea.name)} case file"><a href="?investigation=${encodeURIComponent(investigation.id)}#${escapeHtml(idea.transcriptAnchor)}">Transcript</a><a href="?investigation=${encodeURIComponent(investigation.id)}#evidence-ledger">Evidence</a><a href="?investigation=${encodeURIComponent(investigation.id)}#failed-arguments">Failed arguments</a><a href="?investigation=${encodeURIComponent(investigation.id)}#${escapeHtml(idea.planAnchor)}">Business plan</a><a href="?investigation=${encodeURIComponent(investigation.id)}#third-chair">Third Chair</a></nav></div>
         <div class="idea-meta"><div><span>Customer</span><strong>${escapeHtml(idea.customer)}</strong></div><div><span>First test</span><strong>${escapeHtml(idea.firstTest)}</strong></div><div><span>Verdict</span><strong>${escapeHtml(investigation.verdict.decision)}</strong></div></div>
       </article>`;
   }).join('');
+}
+
+function renderPipeline(site) {
+  const target = site.productionTarget;
+  $('#production-target').innerHTML = `
+    <div><strong>${target.caseDraftsPerDay}</strong><span>case drafts per research day</span></div>
+    <div><strong>${target.survivingCasesPerDay}</strong><span>surviving case files minimum</span></div>
+    <p>${escapeHtml(target.rule)} <em>${escapeHtml(target.qualityGuardrail)}</em></p>`;
+  $('#pipeline-list').innerHTML = site.pipeline.map((item, index) => `
+    <li>
+      <div class="pipeline-number">${String(index + 1).padStart(2, '0')}</div>
+      <div><span>${escapeHtml(item.stage)} · ${escapeHtml(item.status)}</span><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></div>
+    </li>`).join('');
 }
 
 function renderThirdChair(investigation) {
@@ -225,8 +252,10 @@ function render({ site, investigations }) {
   renderEvidence(investigation);
   renderConversation(investigation, site.agents);
   renderVerdict(investigation);
+  renderFailedArguments(investigation);
   renderBusinessPlan(investigation);
   renderBoard(investigations);
+  renderPipeline(site);
   renderThirdChair(investigation);
   renderFund(site);
   bindControls();

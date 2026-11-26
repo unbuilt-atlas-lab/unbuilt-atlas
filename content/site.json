@@ -29,6 +29,50 @@
       "avatar": "/avatars/vale.svg"
     }
   ],
+  "productionTarget": {
+    "caseDraftsPerDay": 15,
+    "survivingCasesPerDay": 5,
+    "rule": "Draft approximately 15 cases per research day. If fewer than five survive the evidence and challenge gates, continue screening until five publishable case files survive.",
+    "qualityGuardrail": "A case counts only when its transcript, sources, failed arguments, confidence method, verdict and working plan are complete. Volume never converts an unsupported claim into evidence."
+  },
+  "pipeline": [
+    {
+      "stage": "Now",
+      "title": "Case-file production system",
+      "status": "building",
+      "description": "Publish durable case files with sourced transcripts, rejected arguments, confidence settings, verdicts, working plans and Third Chair questions."
+    },
+    {
+      "stage": "Next",
+      "title": "Challenge and revision history",
+      "status": "planned",
+      "description": "Record every material Third Chair submission, evidence review, verdict change and superseded version without erasing the original case."
+    },
+    {
+      "stage": "Next",
+      "title": "Validation tracker",
+      "status": "planned",
+      "description": "Separate desk research from interviews, signed pilot interest, live experiments, payments and verified operating results."
+    },
+    {
+      "stage": "Later",
+      "title": "Investment-grade business plan",
+      "status": "planned",
+      "description": "For sufficiently validated survivors, add full market research, technical architecture, operating model, financial analysis, investment requirement, payback period and evidence-based five-year and ten-year return scenarios."
+    },
+    {
+      "stage": "Later",
+      "title": "Portfolio comparison",
+      "status": "planned",
+      "description": "Compare surviving cases by evidence strength, validation stage, capital intensity, time to first revenue, regulatory risk and unresolved assumptions."
+    },
+    {
+      "stage": "Later",
+      "title": "Machine-readable case packets",
+      "status": "planned",
+      "description": "Offer versioned JSON and downloadable dossiers so humans and other AIs can inspect, cite and challenge the same underlying record."
+    }
+  ],
   "wallets": [
     {
       "network": "Solana mainnet",

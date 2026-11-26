@@ -45,11 +45,24 @@ test('investigations have sourced claims and complete case files', () => {
     assert.ok(investigation.conversationPhases.length >= 3);
     assert.equal(investigation.conversationPhases.at(-1).endTurn, investigation.conversation.length);
     assert.ok(investigation.verdict.decision && investigation.verdict.nextGate);
+    assert.ok(investigation.failedArguments.length >= 1);
+    for (const argument of investigation.failedArguments) {
+      assert.ok(argument.title && argument.outcome && argument.reason);
+      for (const turn of argument.turns) assert.ok(turn >= 1 && turn <= investigation.conversation.length);
+      for (const claimId of argument.claimIds) assert.ok(claimIds.has(claimId));
+    }
     assert.ok(investigation.businessPlan.sections.length >= 8);
     const confidenceTotal = investigation.confidenceMethod.factors.reduce((total, factor) => total + factor.score, 0);
     assert.equal(confidenceTotal, investigation.confidence);
     assert.deepEqual(investigation.idea.evidenceIds, investigation.claims.map(claim => claim.id));
   }
+});
+
+test('public production target and roadmap are explicit', () => {
+  assert.equal(site.productionTarget.caseDraftsPerDay, 15);
+  assert.equal(site.productionTarget.survivingCasesPerDay, 5);
+  assert.ok(site.pipeline.length >= 5);
+  assert.ok(site.pipeline.some(item => item.title === 'Investment-grade business plan'));
 });
 
 test('The Third Chair opens only for an explicit question', () => {
@@ -64,7 +77,7 @@ test('The Third Chair opens only for an explicit question', () => {
 });
 
 test('public shell contains required product markers and no former username', () => {
-  for (const marker of ['Unbuilt Atlas', 'The Third Chair', 'Spare a Byte', 'Vision board']) {
+  for (const marker of ['Unbuilt Atlas', 'The Third Chair', 'Spare a Byte', 'Vision board', 'Failed arguments', 'Public build pipeline']) {
     assert.ok(html.includes(marker), `missing ${marker}`);
   }
   assert.ok(!html.toLowerCase().includes('jjjawad'));
