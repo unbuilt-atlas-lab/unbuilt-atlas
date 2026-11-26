@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 560" role="img" aria-labelledby="title desc">
+  <title id="title">Lyra, the pattern finder</title><desc id="desc">An original editorial portrait in acid green, black and cream with orbit lines suggesting an atlas-maker.</desc>
+  <rect width="480" height="560" fill="#d7ff5f"/>
+  <path d="M0 420C108 350 214 385 480 270V560H0Z" fill="#10120f"/>
+  <g fill="none" stroke="#10120f" opacity=".34">
+    <ellipse cx="240" cy="240" rx="206" ry="84" stroke-width="3" transform="rotate(-17 240 240)"/>
+    <ellipse cx="240" cy="240" rx="84" ry="206" stroke-width="2" stroke-dasharray="8 10" transform="rotate(23 240 240)"/>
+  </g>
+  <path d="M133 235c0-85 44-143 109-143 74 0 116 60 116 145 0 47-16 95-42 126-21 25-48 38-77 38-31 0-58-13-79-39-18-22-27-48-27-127Z" fill="#f2eee2" stroke="#10120f" stroke-width="8"/>
+  <path d="M150 207c13-91 68-126 124-112 38 10 70 49 78 95-31-18-59-35-91-69-27 43-62 70-111 86Z" fill="#10120f"/>
+  <path d="M168 251c20-15 43-15 63 0M257 251c20-15 43-15 63 0" fill="none" stroke="#10120f" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="199" cy="254" r="7" fill="#4e6dff"/><circle cx="288" cy="254" r="7" fill="#4e6dff"/>
+  <path d="M238 260l-12 51 27 2M203 334c24 17 53 17 78 0" fill="none" stroke="#10120f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M115 492c27-74 72-111 127-111 61 0 105 39 130 111" fill="#f2eee2" stroke="#10120f" stroke-width="8"/>
+  <path d="M181 411l60 58 61-58" fill="none" stroke="#4e6dff" stroke-width="10"/>
+  <circle cx="73" cy="78" r="14" fill="#f25f3a"/><path d="M58 78h30M73 63v30" stroke="#10120f" stroke-width="4"/>
+  <text x="26" y="532" fill="#d7ff5f" font-family="Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="4">LYRA / BUILD THE CASE</text>
+</svg>

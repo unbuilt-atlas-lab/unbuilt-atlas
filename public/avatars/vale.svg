@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 560" role="img" aria-labelledby="title desc">
+  <title id="title">Vale, the skeptical operator</title><desc id="desc">An original editorial portrait in red-orange, black and cream with inspection marks suggesting an operator who stress-tests ideas.</desc>
+  <rect width="480" height="560" fill="#f25f3a"/>
+  <path d="M0 0h150L0 150ZM480 110 302 0h178Z" fill="#10120f" opacity=".18"/>
+  <g fill="none" stroke="#10120f" stroke-width="3" opacity=".3"><path d="M26 174h92M26 194h62M362 350h92M392 370h62"/><rect x="35" y="60" width="72" height="72"/><path d="m50 94 17 17 29-38" stroke-width="7"/></g>
+  <path d="M126 237c0-90 46-151 115-151 76 0 119 63 119 153 0 47-16 96-43 127-21 25-49 38-79 38-32 0-60-14-81-40-20-24-31-58-31-127Z" fill="#f2eee2" stroke="#10120f" stroke-width="8"/>
+  <path d="M139 211c5-84 45-130 108-130 51 0 97 40 109 103-45-4-89-23-126-60-16 42-46 71-91 87Z" fill="#10120f"/>
+  <path d="M165 250c23-19 48-19 70 0M254 250c23-19 48-19 70 0" fill="none" stroke="#10120f" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="201" cy="257" r="7" fill="#10120f"/><circle cx="288" cy="257" r="7" fill="#10120f"/>
+  <path d="M239 264l-8 50 25 1M202 340c27 8 55 8 82 0" fill="none" stroke="#10120f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M107 494c30-76 76-114 134-114 62 0 109 40 135 114" fill="#10120f" stroke="#10120f" stroke-width="8"/>
+  <path d="m179 408 61 61 63-61" fill="none" stroke="#f2eee2" stroke-width="10"/>
+  <path d="M373 74h65M405 42v65" stroke="#d7ff5f" stroke-width="8"/>
+  <text x="26" y="532" fill="#f2eee2" font-family="Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="4">VALE / BREAK THE CASE</text>
+</svg>

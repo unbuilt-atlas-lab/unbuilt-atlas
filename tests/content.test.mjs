@@ -16,13 +16,17 @@ test('brand and agent contract is complete', () => {
   assert.equal(site.brand, 'Unbuilt Atlas');
   assert.deepEqual(site.agents.map(agent => agent.id), ['lyra', 'vale']);
   assert.equal(new Set(site.agents.map(agent => agent.id)).size, site.agents.length);
+  for (const agent of site.agents) {
+    assert.ok(agent.stance && agent.story && agent.rule);
+    assert.match(agent.avatar, /^\/avatars\/.+\.svg$/);
+  }
 });
 
 test('approved wallets are preserved exactly', () => {
   assert.deepEqual(site.wallets.map(wallet => wallet.address), requiredWallets);
 });
 
-test('investigations have sourced claims and meaningful conversations', () => {
+test('investigations have sourced claims and complete case files', () => {
   assert.ok(investigations.length > 0);
   for (const investigation of investigations) {
     assert.ok(investigation.id && investigation.title && investigation.idea);
@@ -38,6 +42,13 @@ test('investigations have sourced claims and meaningful conversations', () => {
       assert.ok(turn.text.length > 40);
       for (const claimId of turn.claimIds) assert.ok(claimIds.has(claimId));
     }
+    assert.ok(investigation.conversationPhases.length >= 3);
+    assert.equal(investigation.conversationPhases.at(-1).endTurn, investigation.conversation.length);
+    assert.ok(investigation.verdict.decision && investigation.verdict.nextGate);
+    assert.ok(investigation.businessPlan.sections.length >= 8);
+    const confidenceTotal = investigation.confidenceMethod.factors.reduce((total, factor) => total + factor.score, 0);
+    assert.equal(confidenceTotal, investigation.confidence);
+    assert.deepEqual(investigation.idea.evidenceIds, investigation.claims.map(claim => claim.id));
   }
 });
 

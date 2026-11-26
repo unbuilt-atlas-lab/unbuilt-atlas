@@ -9,6 +9,7 @@
     "confidence": 62,
     "title": "The surplus hiding between fit-out and waste",
     "thesis": "A closeout workflow could match unused fit-out materials to nearby projects before disposal, without becoming a waste carrier or warehouse.",
+    "summary": "A sourced UAE investigation into whether usable commercial fit-out surplus can be documented and matched before it enters the waste stream.",
     "idea": {
       "name": "FitLoop UAE",
       "customer": "SME fit-out contractors, project managers and quantity surveyors in Dubai",
@@ -18,7 +19,10 @@
       "firstTest": "Manually audit the last three closeouts of ten fit-out teams. Continue only if five show recurring surplus and two agree to a live matching trial.",
       "biggestRisk": "Procurement approval, title transfer and waste classification may block reuse even when a buyer exists.",
       "capital": "Low for the manual validation stage",
-      "state": "Contested"
+      "state": "Contested",
+      "evidenceIds": ["c1", "c2", "c3", "c4", "c5", "c6", "c7"],
+      "transcriptAnchor": "transcript-uae-fitout-surplus",
+      "planAnchor": "plan-uae-fitout-surplus"
     },
     "claims": [
       {
@@ -164,6 +168,45 @@
         "claimIds": []
       }
     ],
+    "conversationPhases": [
+      {"id": "discovery", "label": "01 · Discovery", "startTurn": 1, "endTurn": 4, "question": "Is there a real, material problem worth investigating?"},
+      {"id": "wedge", "label": "02 · Find the wedge", "startTurn": 5, "endTurn": 8, "question": "Why would this not become another generic marketplace?"},
+      {"id": "model", "label": "03 · Build the operating model", "startTurn": 9, "endTurn": 12, "question": "Who pays, what is excluded, and where can regulation kill it?"},
+      {"id": "verdict", "label": "04 · Verdict", "startTurn": 13, "endTurn": 14, "question": "What is the cheapest decisive test, and should the idea survive?"}
+    ],
+    "verdict": {
+      "decision": "Survives as contested",
+      "summary": "FitLoop UAE is not ready to become software. It survives only as a manual closeout-audit and matching experiment.",
+      "why": "The policy and waste evidence supports the existence of a material problem, and a no-custody workflow is operationally plausible. The case remains weak on customer proof, willingness to pay and the legal boundary between transferable inventory and regulated waste.",
+      "nextGate": "Audit 30 historical closeouts across 10 fit-out teams; continue only if five teams show recurring recoverable surplus, two accept a live manual match, and a qualified source resolves the inventory-to-waste boundary."
+    },
+    "confidenceMethod": {
+      "label": "Research confidence, not probability of success",
+      "explanation": "The score measures how much of the current case is supported strongly enough to justify the next validation step. It is not a valuation, investment rating or forecast.",
+      "factors": [
+        {"name": "Evidence strength", "score": 21, "max": 25, "reason": "Multiple official UAE and Dubai sources establish the waste, segregation and diversion context."},
+        {"name": "Problem importance", "score": 15, "max": 20, "reason": "The material-loss problem is credible, but the exact fit-out surplus volume has not been audited."},
+        {"name": "Customer validation", "score": 3, "max": 20, "reason": "No contractor interviews, commitments or willingness-to-pay evidence exist yet."},
+        {"name": "Operational feasibility", "score": 13, "max": 20, "reason": "A manual no-custody pilot is plausible; pickup windows, verification and adoption remain untested."},
+        {"name": "Regulatory clarity", "score": 10, "max": 15, "reason": "Official guidance exists, but the inventory-to-waste boundary remains unresolved."}
+      ]
+    },
+    "businessPlan": {
+      "access": "open-working-dossier",
+      "notice": "Working plan — detailed enough to challenge, not presented as validated or investment-ready.",
+      "sections": [
+        {"title": "Executive proposition", "body": "FitLoop UAE would help Dubai fit-out teams document unopened and reusable surplus during project closeout, match it to nearby demand, and preserve a transfer record before disposal. The pilot avoids warehousing, transport, material custody and payment custody."},
+        {"title": "Beachhead customer", "body": "SME fit-out contractors completing several retail, office or hospitality projects each year. The operational user is the project manager or quantity surveyor; the economic buyer is the contractor that carries closeout labour, disposal cost and reporting risk."},
+        {"title": "Job to be done", "body": "When a project is closing and surplus appears, help the team identify what is reusable, prove its condition and ownership, find a recipient before the removal deadline, and create an auditable transfer record without adding another sustainability spreadsheet."},
+        {"title": "Product workflow", "body": "1) Capture label, quantity, condition and removal deadline. 2) Attach invoice, submittal or ownership evidence. 3) Generate a surplus manifest. 4) Match by material, distance and timing. 5) Route regulated movement to approved transporters. 6) Record acceptance and diversion evidence."},
+        {"title": "Revenue hypothesis", "body": "Start with a paid closeout service or contractor subscription rather than a marketplace commission. Add a success fee only when a verified transfer completes. Pricing cannot be set responsibly until historical surplus value and closeout labour are measured."},
+        {"title": "Go-to-market", "body": "Recruit ten fit-out teams through project managers, quantity surveyors and sustainability leads. Offer a manual audit of their last three closeouts, then run two live matches. Use recovered value, avoided disposal effort and reporting evidence as the case study—not broad circular-economy claims."},
+        {"title": "Operations and partners", "body": "FitLoop coordinates information and matching. Contractors retain title until transfer; approved operators handle regulated transport; receiving project teams approve material; specialists clarify contract, waste and tax treatment. No warehouse is used in the validation stage."},
+        {"title": "90-day validation plan", "body": "Days 1–30: interview and audit ten teams. Days 31–60: manually build manifests and attempt two matches. Days 61–90: measure time-to-list, match rate, recovered value, documentation acceptance and willingness to pay. Publish both successes and failures."},
+        {"title": "Kill criteria", "body": "Park the idea if fewer than five teams show recurring usable surplus, if no two teams accept a live trial, if title or waste rules prevent pre-disposal transfer, or if documentation labour costs more than the recoverable value."},
+        {"title": "Largest risks", "body": "Late discovery, consultant rejection, unclear title, regulated transport, inconsistent material condition, insufficient local demand, contractors refusing extra closeout work, and a marketplace cold start."}
+      ]
+    },
     "openQuestion": {
       "title": "When does surplus become waste?",
       "question": "At what exact operational or legal point does unopened surplus from a Dubai fit-out project become regulated waste rather than transferable inventory, and what documentation preserves its status as a usable product?",

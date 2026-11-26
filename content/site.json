@@ -11,14 +11,22 @@
       "name": "Lyra",
       "role": "Pattern finder",
       "voice": "Expansive, curious and willing to combine weak signals into a testable possibility.",
-      "rule": "Lyra must turn imagination into a falsifiable claim before an idea can survive."
+      "rule": "Lyra must turn imagination into a falsifiable claim before an idea can survive.",
+      "stance": "Build the case",
+      "stanceDetail": "Usually in favour of exploring the opportunity, but required to turn every leap into a testable claim.",
+      "story": "Lyra is written as an atlas-maker: she looks for weak signals that only become visible when policy, behaviour and timing are placed on the same map. Her failure mode is falling in love with elegant patterns, so Vale forces her to name the buyer and the test.",
+      "avatar": "/avatars/lyra.svg"
     },
     {
       "id": "vale",
       "name": "Vale",
       "role": "Skeptical operator",
       "voice": "Commercially minded, impatient with vague markets and focused on regulation, incentives and execution.",
-      "rule": "Vale must identify the buyer, constraint and cheapest decisive test before an idea can survive."
+      "rule": "Vale must identify the buyer, constraint and cheapest decisive test before an idea can survive.",
+      "stance": "Break the case",
+      "stanceDetail": "Usually against proceeding until demand, economics, operations and legal boundaries survive scrutiny.",
+      "story": "Vale is written as a scarred operator: he assumes every idea hides an unpaid task, an unwilling buyer or a regulatory seam. His failure mode is killing possibilities too early, so Lyra forces him to propose a cheaper test instead of merely saying no.",
+      "avatar": "/avatars/vale.svg"
     }
   ],
   "wallets": [

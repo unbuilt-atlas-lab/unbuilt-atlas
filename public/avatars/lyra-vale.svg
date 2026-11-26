@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Lyra and Vale in the research room</title><desc id="desc">An original split editorial illustration showing Lyra building a case and Vale challenging it across a shared evidence table.</desc>
+  <rect width="1200" height="675" fill="#10120f"/><path d="M0 0h600v675H0Z" fill="#d7ff5f"/><path d="M600 0h600v675H600Z" fill="#f25f3a"/>
+  <g fill="none" stroke="#10120f" opacity=".28"><ellipse cx="320" cy="270" rx="260" ry="95" stroke-width="4" transform="rotate(-12 320 270)"/><ellipse cx="320" cy="270" rx="95" ry="260" stroke-width="3" stroke-dasharray="10 12" transform="rotate(18 320 270)"/></g>
+  <g stroke="#10120f" stroke-width="8"><path d="M160 440c35-126 95-195 169-195s135 69 170 195" fill="#f2eee2"/><circle cx="330" cy="216" r="116" fill="#f2eee2"/><path d="M224 199c12-79 55-116 111-112 49 4 89 42 105 102-49-16-84-42-111-78-24 42-59 70-105 88Z" fill="#10120f"/></g>
+  <path d="M259 229c18-12 38-12 56 0M349 229c18-12 38-12 56 0M292 310c24 15 51 15 75 0" fill="none" stroke="#10120f" stroke-width="7" stroke-linecap="round"/>
+  <g stroke="#10120f" stroke-width="8"><path d="M708 440c35-126 95-195 169-195s135 69 170 195" fill="#10120f"/><circle cx="878" cy="216" r="116" fill="#f2eee2"/><path d="M772 199c12-79 55-116 111-112 49 4 89 42 105 102-49-16-84-42-111-78-24 42-59 70-105 88Z" fill="#10120f"/></g>
+  <path d="M807 229c18-12 38-12 56 0M897 229c18-12 38-12 56 0M840 310c24 6 51 6 75 0" fill="none" stroke="#10120f" stroke-width="7" stroke-linecap="round"/>
+  <path d="M180 460h840l-62 158H242Z" fill="#f2eee2" stroke="#10120f" stroke-width="8"/>
+  <path d="M338 505h210M338 537h164M650 505h210M698 537h162" stroke="#10120f" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="600" cy="525" r="42" fill="#4e6dff" stroke="#10120f" stroke-width="8"/><path d="m580 525 14 14 29-34" fill="none" stroke="#f2eee2" stroke-width="8"/>
+  <text x="44" y="68" fill="#10120f" font-family="Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="5">LYRA / BUILD</text><text x="1156" y="68" text-anchor="end" fill="#10120f" font-family="Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="5">VALE / BREAK</text>
+  <text x="600" y="652" text-anchor="middle" fill="#f2eee2" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="4">THE EVIDENCE DECIDES</text>
+</svg>

@@ -12,17 +12,29 @@ async function loadData() {
 
 function renderAgents(agents) {
   $('#agent-cards').innerHTML = agents.map(agent => `
-    <article class="agent-card">
-      <span class="agent-initial" aria-hidden="true">${escapeHtml(agent.name[0])}</span>
+    <article class="agent-card ${escapeHtml(agent.id)}">
+      <img class="agent-avatar" src="${escapeHtml(agent.avatar)}" alt="Illustrated portrait of ${escapeHtml(agent.name)}">
       <div>
         <span class="agent-role">${escapeHtml(agent.role)}</span>
         <h2>${escapeHtml(agent.name)}</h2>
-        <p>${escapeHtml(agent.voice)}</p>
+        <strong class="agent-stance">${escapeHtml(agent.stance)}</strong>
+        <p>${escapeHtml(agent.stanceDetail)}</p>
+        <details class="agent-story"><summary>Who is ${escapeHtml(agent.name)}?</summary><p>${escapeHtml(agent.story)}</p><p><strong>Rule:</strong> ${escapeHtml(agent.rule)}</p></details>
       </div>
     </article>`).join('');
 }
 
-function renderIdeaBrief(idea) {
+function renderCaseIndex(investigations, activeId) {
+  $('#case-index').innerHTML = investigations.map(investigation => `
+    <article class="case-row ${investigation.id === activeId ? 'active' : ''}">
+      <div class="case-number">${escapeHtml(investigation.number)}</div>
+      <div><span>${escapeHtml(investigation.country)} · ${escapeHtml(investigation.industry)}</span><h3>${escapeHtml(investigation.title)}</h3><p>${escapeHtml(investigation.summary || investigation.thesis)}</p></div>
+      <div class="case-state"><strong>${escapeHtml(investigation.idea.state)}</strong><span>${escapeHtml(investigation.confidence)}% research confidence</span><a href="?investigation=${encodeURIComponent(investigation.id)}#room">${investigation.id === activeId ? 'Read this case' : 'Open case file'} →</a></div>
+    </article>`).join('');
+}
+
+function renderIdeaBrief(investigation) {
+  const idea = investigation.idea;
   const rows = [
     ['Customer', idea.customer],
     ['Problem', idea.problem],
@@ -34,42 +46,63 @@ function renderIdeaBrief(idea) {
   $('#idea-brief').innerHTML = `
     <span class="eyebrow">Current survivor</span>
     <h3>${escapeHtml(idea.name)}</h3>
+    <nav class="brief-links" aria-label="Case file sections"><a href="#${escapeHtml(idea.transcriptAnchor)}">Full transcript</a><a href="#evidence-ledger">Evidence ledger</a><a href="#${escapeHtml(idea.planAnchor)}">Business plan</a><a href="#third-chair">Challenge</a></nav>
     ${rows.map(([label, text]) => `<div class="brief-row"><span>${escapeHtml(label)}</span><p>${escapeHtml(text)}</p></div>`).join('')}`;
 }
 
-function renderEvidence(claims) {
-  $('#evidence-ledger').innerHTML = claims.map(claim => `
-    <article class="evidence-item" id="${escapeHtml(claim.id)}">
-      <span class="evidence-id">${escapeHtml(claim.id.toUpperCase())}</span>
-      <p>${escapeHtml(claim.statement)}</p>
-      <a href="${escapeHtml(claim.source)}" target="_blank" rel="noreferrer">Source ↗</a>
-    </article>`).join('');
+function renderConfidence(investigation) {
+  const method = investigation.confidenceMethod;
+  $('#confidence-panel').innerHTML = `<div class="confidence-copy"><span class="eyebrow">${escapeHtml(method.label)}</span><p>${escapeHtml(method.explanation)}</p></div><div class="confidence-factors">${method.factors.map(factor => `<article><div><strong>${escapeHtml(factor.name)}</strong><span>${factor.score} / ${factor.max}</span></div><div class="factor-meter"><i style="width:${Math.round((factor.score / factor.max) * 100)}%"></i></div><p>${escapeHtml(factor.reason)}</p></article>`).join('')}</div>`;
 }
 
-function renderConversation(investigation) {
+function renderEvidence(investigation) {
+  const turnsByClaim = new Map();
+  investigation.conversation.forEach((turn, index) => turn.claimIds.forEach(claimId => {
+    if (!turnsByClaim.has(claimId)) turnsByClaim.set(claimId, []);
+    turnsByClaim.get(claimId).push(index + 1);
+  }));
+  $('#evidence-ledger').innerHTML = investigation.claims.map(claim => {
+    const turns = turnsByClaim.get(claim.id) || [];
+    return `<article class="evidence-item" id="evidence-${escapeHtml(claim.id)}"><span class="evidence-id">${escapeHtml(claim.id.toUpperCase())}</span><div><p>${escapeHtml(claim.statement)}</p><small>${escapeHtml(claim.sourceTitle)} · ${escapeHtml(claim.date)} · ${escapeHtml(claim.kind)}</small>${turns.length ? `<div class="used-in">Used in ${turns.map(turn => `<a href="#turn-${turn}">turn ${String(turn).padStart(2, '0')}</a>`).join(', ')}</div>` : ''}</div><a href="${escapeHtml(claim.source)}" target="_blank" rel="noreferrer">Open source ↗</a></article>`;
+  }).join('');
+}
+
+function renderConversation(investigation, agents) {
   const claims = new Map(investigation.claims.map(claim => [claim.id, claim]));
-  $('#conversation').innerHTML = investigation.conversation.map(turn => `
-    <li class="turn ${escapeHtml(turn.agent)}">
-      <div class="turn-agent">${escapeHtml(turn.agent)}</div>
-      <div>
-        <span class="turn-mode">${escapeHtml(turn.mode)}</span>
-        <blockquote>${escapeHtml(turn.text)}</blockquote>
-        ${turn.claimIds.length ? `<div class="citations">${turn.claimIds.map(id => {
-          const claim = claims.get(id);
-          return `<a class="citation" href="${escapeHtml(claim.source)}" target="_blank" rel="noreferrer" aria-label="Open evidence ${escapeHtml(id)}">${escapeHtml(id.toUpperCase())} ↗</a>`;
-        }).join('')}</div>` : ''}
-      </div>
-    </li>`).join('');
+  const agentsById = new Map(agents.map(agent => [agent.id, agent]));
+  const phaseStarts = new Map(investigation.conversationPhases.map(phase => [phase.startTurn, phase]));
+  const items = [];
+  investigation.conversation.forEach((turn, index) => {
+    const turnNumber = index + 1;
+    const phase = phaseStarts.get(turnNumber);
+    if (phase) items.push(`<li class="phase-divider" id="phase-${escapeHtml(phase.id)}"><span>${escapeHtml(phase.label)}</span><strong>${escapeHtml(phase.question)}</strong><small>Turns ${String(phase.startTurn).padStart(2, '0')}–${String(phase.endTurn).padStart(2, '0')}</small></li>`);
+    const agent = agentsById.get(turn.agent);
+    items.push(`<li class="turn ${escapeHtml(turn.agent)}" id="turn-${turnNumber}"><div class="turn-agent"><img src="${escapeHtml(agent.avatar)}" alt=""><span>${escapeHtml(agent.name)}</span><small>${escapeHtml(agent.stance)}</small></div><div><div class="turn-topline"><span class="turn-number">Turn ${String(turnNumber).padStart(2, '0')}</span><span class="turn-mode">${escapeHtml(turn.mode)}</span></div><blockquote>${escapeHtml(turn.text)}</blockquote>${turn.claimIds.length ? `<div class="citations">${turn.claimIds.map(id => { const claim = claims.get(id); return `<a class="citation" href="#evidence-${escapeHtml(id)}" data-source="${escapeHtml(claim.source)}" aria-label="Read evidence ${escapeHtml(id)} in the ledger">${escapeHtml(id.toUpperCase())} · evidence</a>`; }).join('')}</div>` : '<span class="reasoning-only">Reasoning turn · no new factual claim</span>'}</div></li>`);
+  });
+  $('#conversation').innerHTML = items.join('');
 }
 
-function renderBoard(investigation) {
-  const idea = investigation.idea;
-  $('#idea-board').innerHTML = `
-    <article class="idea-card">
-      <div><span class="number">${escapeHtml(investigation.number)}</span><p>${escapeHtml(investigation.country)}<br>${escapeHtml(investigation.industry)}</p></div>
-      <div><div class="chips"><span class="chip signal-chip">${escapeHtml(idea.state)}</span><span class="chip">Confidence ${escapeHtml(investigation.confidence)}%</span></div><h3>${escapeHtml(idea.name)}</h3><p>${escapeHtml(investigation.thesis)}</p></div>
-      <div class="idea-meta"><div><span>Customer</span><strong>${escapeHtml(idea.customer)}</strong></div><div><span>First test</span><strong>${escapeHtml(idea.firstTest)}</strong></div><div><span>Capital</span><strong>${escapeHtml(idea.capital)}</strong></div></div>
-    </article>`;
+function renderVerdict(investigation) {
+  const verdict = investigation.verdict;
+  $('#verdict-card').innerHTML = `<span class="eyebrow">End of discussion</span><h3 id="verdict-title">${escapeHtml(verdict.decision)}</h3><p class="verdict-summary">${escapeHtml(verdict.summary)}</p><div class="verdict-grid"><div><span>Why</span><p>${escapeHtml(verdict.why)}</p></div><div><span>Next gate</span><p>${escapeHtml(verdict.nextGate)}</p></div></div><a class="text-link" href="#third-chair">Challenge the unresolved assumption ↓</a>`;
+}
+
+function renderBusinessPlan(investigation) {
+  const plan = investigation.businessPlan;
+  $('#plan-notice').textContent = plan.notice;
+  $('#business-plan').innerHTML = plan.sections.map((section, index) => `<details ${index < 2 ? 'open' : ''}><summary><span>${String(index + 1).padStart(2, '0')}</span>${escapeHtml(section.title)}</summary><p>${escapeHtml(section.body)}</p></details>`).join('');
+}
+
+function renderBoard(investigations) {
+  $('#idea-board').innerHTML = investigations.map(investigation => {
+    const idea = investigation.idea;
+    return `
+      <article class="idea-card" data-country="${escapeHtml(investigation.country)}" data-state="${escapeHtml(idea.state)}">
+        <div><span class="number">${escapeHtml(investigation.number)}</span><p>${escapeHtml(investigation.country)}<br>${escapeHtml(investigation.industry)}</p></div>
+        <div><div class="chips"><span class="chip signal-chip">${escapeHtml(idea.state)}</span><span class="chip">Confidence ${escapeHtml(investigation.confidence)}%</span><span class="chip">${investigation.claims.length} sources</span></div><h3>${escapeHtml(idea.name)}</h3><p>${escapeHtml(investigation.verdict.summary)}</p><nav class="board-links" aria-label="${escapeHtml(idea.name)} case file"><a href="?investigation=${encodeURIComponent(investigation.id)}#${escapeHtml(idea.transcriptAnchor)}">Transcript</a><a href="?investigation=${encodeURIComponent(investigation.id)}#evidence-ledger">Evidence</a><a href="?investigation=${encodeURIComponent(investigation.id)}#${escapeHtml(idea.planAnchor)}">Business plan</a><a href="?investigation=${encodeURIComponent(investigation.id)}#third-chair">Third Chair</a></nav></div>
+        <div class="idea-meta"><div><span>Customer</span><strong>${escapeHtml(idea.customer)}</strong></div><div><span>First test</span><strong>${escapeHtml(idea.firstTest)}</strong></div><div><span>Verdict</span><strong>${escapeHtml(investigation.verdict.decision)}</strong></div></div>
+      </article>`;
+  }).join('');
 }
 
 function renderThirdChair(investigation) {
@@ -114,9 +147,71 @@ function renderFund(site) {
   });
 }
 
+function bindControls() {
+  $('#evidence-toggle').addEventListener('click', event => {
+    const ledger = $('#evidence-ledger');
+    ledger.hidden = !ledger.hidden;
+    event.currentTarget.setAttribute('aria-expanded', String(!ledger.hidden));
+    event.currentTarget.textContent = ledger.hidden ? 'Show evidence ledger' : 'Hide evidence ledger';
+  });
+
+  $('#confidence-toggle').addEventListener('click', event => {
+    const panel = $('#confidence-panel');
+    panel.hidden = !panel.hidden;
+    event.currentTarget.setAttribute('aria-expanded', String(!panel.hidden));
+    event.currentTarget.textContent = panel.hidden ? 'How is this scored?' : 'Hide score settings';
+  });
+
+  $('#conversation').addEventListener('click', event => {
+    const citation = event.target.closest('.citation');
+    if (!citation) return;
+    const ledger = $('#evidence-ledger');
+    ledger.hidden = false;
+    $('#evidence-toggle').setAttribute('aria-expanded', 'true');
+    $('#evidence-toggle').textContent = 'Hide evidence ledger';
+  });
+
+  document.querySelectorAll('.board-filters button').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('.board-filters button').forEach(item => item.classList.remove('active'));
+      button.classList.add('active');
+      const filter = button.textContent.trim().toLowerCase();
+      document.querySelectorAll('.idea-card').forEach(card => {
+        const matches = filter === 'all' || card.dataset.country.toLowerCase().includes(filter) || card.dataset.state.toLowerCase() === filter;
+        card.hidden = !matches;
+      });
+    });
+  });
+  window.addEventListener('hashchange', restoreDeepLink);
+}
+
+function restoreDeepLink() {
+  if (!window.location.hash) return;
+  const targetId = decodeURIComponent(window.location.hash.slice(1));
+  if (targetId === 'evidence-ledger' || targetId.startsWith('evidence-')) {
+    const ledger = $('#evidence-ledger');
+    ledger.hidden = false;
+    $('#evidence-toggle').setAttribute('aria-expanded', 'true');
+    $('#evidence-toggle').textContent = 'Hide evidence ledger';
+  }
+  window.setTimeout(() => {
+    const target = document.getElementById(targetId);
+    if (!target) return;
+    const root = document.documentElement;
+    const previousBehavior = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+    const offset = window.matchMedia('(max-width: 760px)').matches ? 160 : 100;
+    window.scrollTo(0, target.getBoundingClientRect().top + window.scrollY - offset);
+    root.style.scrollBehavior = previousBehavior;
+  }, 0);
+}
+
 function render({ site, investigations }) {
-  const investigation = investigations[0];
+  const requestedId = new URLSearchParams(window.location.search).get('investigation');
+  const investigation = investigations.find(item => item.id === requestedId) || investigations[0];
   $('#issue-label').textContent = `Investigation ${investigation.number} · ${investigation.country}`;
+  document.querySelector('[id^="transcript-"]').id = investigation.idea.transcriptAnchor;
+  document.querySelector('.business-plan').id = investigation.idea.planAnchor;
   $('#investigation-title').textContent = investigation.title;
   $('#investigation-thesis').textContent = investigation.thesis;
   $('#confidence-value').textContent = `${investigation.confidence}%`;
@@ -124,27 +219,19 @@ function render({ site, investigations }) {
   $('#investigation-chips').innerHTML = [investigation.country, investigation.industry, investigation.idea.state].map((value, index) => `<span class="chip ${index === 2 ? 'signal-chip' : ''}">${escapeHtml(value)}</span>`).join('');
   $('#disclosure').textContent = site.disclosure;
   renderAgents(site.agents);
-  renderIdeaBrief(investigation.idea);
-  renderEvidence(investigation.claims);
-  renderConversation(investigation);
-  renderBoard(investigation);
+  renderCaseIndex(investigations, investigation.id);
+  renderIdeaBrief(investigation);
+  renderConfidence(investigation);
+  renderEvidence(investigation);
+  renderConversation(investigation, site.agents);
+  renderVerdict(investigation);
+  renderBusinessPlan(investigation);
+  renderBoard(investigations);
   renderThirdChair(investigation);
   renderFund(site);
+  bindControls();
+  restoreDeepLink();
 }
-
-$('#evidence-toggle').addEventListener('click', event => {
-  const ledger = $('#evidence-ledger');
-  ledger.hidden = !ledger.hidden;
-  event.currentTarget.setAttribute('aria-expanded', String(!ledger.hidden));
-  event.currentTarget.textContent = ledger.hidden ? 'Show evidence ledger' : 'Hide evidence ledger';
-});
-
-document.querySelectorAll('.board-filters button').forEach(button => {
-  button.addEventListener('click', () => {
-    document.querySelectorAll('.board-filters button').forEach(item => item.classList.remove('active'));
-    button.classList.add('active');
-  });
-});
 
 try {
   render(await loadData());

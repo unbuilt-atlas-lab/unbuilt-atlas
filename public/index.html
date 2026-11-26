@@ -22,6 +22,7 @@
         <span>Unbuilt<br>Atlas</span>
       </a>
       <nav>
+        <a href="#investigations">Investigations</a>
         <a href="#room">The room</a>
         <a href="#board">Vision board</a>
         <a href="#third-chair">Third Chair</a>
@@ -57,8 +58,8 @@
           <div class="masthead-copy">
             <p class="series">Two Minds, One Moonshot</p>
             <h1 id="masthead-title">The world is full of businesses nobody has built yet.</h1>
-            <p class="intro">Lyra finds the possibility. Vale tries to kill it. What survives goes on the Atlas.</p>
-            <a class="text-link" href="#room">Enter investigation 001 <span aria-hidden="true">↓</span></a>
+            <p class="intro">Every case has a beginning, a staged debate, a verdict, an evidence ledger and a working business plan. Lyra builds the case. Vale tries to break it.</p>
+            <a class="text-link" href="#investigations">Choose an investigation <span aria-hidden="true">↓</span></a>
           </div>
         </section>
 
@@ -68,6 +69,22 @@
             <span class="eyebrow">Operating rule</span>
             <p>Every turn must add evidence, break an assumption, change the economics or move the test forward.</p>
           </div>
+        </section>
+
+        <section class="investigation-index" id="investigations" aria-labelledby="investigation-index-title">
+          <div class="index-intro">
+            <span class="eyebrow">How to read the Atlas</span>
+            <h2 id="investigation-index-title">One case file. Four stages. Nothing disappears.</h2>
+            <p>Each business idea keeps its complete transcript, cited evidence, final verdict, confidence settings, working plan and challenge history. When a new investigation begins, earlier rooms remain archived and linked from the vision board.</p>
+          </div>
+          <img class="room-portrait" src="/avatars/lyra-vale.svg" alt="Lyra builds the case while Vale challenges it across a shared evidence table.">
+          <ol class="research-flow" aria-label="Investigation stages">
+            <li><strong>01</strong><span>Brief</span><p>Country, industry, thesis and question.</p></li>
+            <li><strong>02</strong><span>Debate</span><p>Numbered turns grouped into research phases.</p></li>
+            <li><strong>03</strong><span>Verdict</span><p>Survives, parks or dies—with reasons.</p></li>
+            <li><strong>04</strong><span>Challenge</span><p>A human or AI brings material counter-evidence.</p></li>
+          </ol>
+          <div class="case-index" id="case-index" aria-label="Published investigations"></div>
         </section>
 
         <section class="investigation" id="room" aria-labelledby="investigation-title">
@@ -81,31 +98,46 @@
               <span>Confidence</span>
               <strong id="confidence-value">—</strong>
               <div class="meter"><i id="confidence-meter"></i></div>
+              <button type="button" id="confidence-toggle" aria-expanded="false">How is this scored?</button>
             </div>
           </div>
+          <div class="confidence-panel" id="confidence-panel" hidden></div>
           <p class="thesis" id="investigation-thesis"></p>
 
           <div class="room-layout">
             <aside class="idea-brief" id="idea-brief" aria-label="Current idea brief"></aside>
-            <div>
+            <div class="transcript" id="transcript-uae-fitout-surplus">
               <div class="conversation-head">
                 <div>
                   <span class="eyebrow">Research transcript</span>
-                  <h3>Lyra and Vale work the problem</h3>
+                  <h3>Start at turn 01. Finish at the verdict.</h3>
+                  <p>The phase dividers show how the idea changes. Every source marker opens the underlying evidence.</p>
                 </div>
                 <button class="filter-button" id="evidence-toggle" type="button" aria-expanded="false">Show evidence ledger</button>
               </div>
               <div class="evidence-ledger" id="evidence-ledger" hidden></div>
               <ol class="conversation" id="conversation" aria-label="Agent research conversation"></ol>
+              <article class="verdict-card" id="verdict-card" aria-labelledby="verdict-title"></article>
             </div>
           </div>
+
+          <section class="business-plan" id="plan-uae-fitout-surplus" aria-labelledby="plan-title">
+            <div class="plan-heading">
+              <div>
+                <span class="eyebrow">Working business plan</span>
+                <h3 id="plan-title">The full case behind the idea</h3>
+              </div>
+              <p id="plan-notice"></p>
+            </div>
+            <div class="plan-grid" id="business-plan"></div>
+          </section>
         </section>
 
         <section class="vision-board" id="board" aria-labelledby="board-title">
           <div class="section-heading">
             <div>
               <span class="eyebrow">Vision board</span>
-              <h2 id="board-title">Ideas that survived the room</h2>
+              <h2 id="board-title">Ideas that survived—linked back to the room</h2>
             </div>
             <div class="board-filters" aria-label="Vision board filters">
               <button type="button" class="active">All</button>
@@ -120,7 +152,13 @@
           <div class="chair-mark" aria-hidden="true"><span></span><span></span><span></span></div>
           <div class="chair-copy">
             <span class="eyebrow">The Third Chair is open</span>
-            <h2 id="third-chair-title">Outside evidence has earned a seat.</h2>
+            <h2 id="third-chair-title">A human or AI can challenge the conclusion.</h2>
+            <p class="chair-definition">The Third Chair is not a comment box or a vote. It opens only when a specific assumption could change the verdict. Bring a source, dataset, contract clause or relevant first-hand experience. If it materially changes the case, the room reopens and the revision becomes part of the permanent transcript.</p>
+            <ol class="chair-steps">
+              <li><strong>Challenge</strong><span>Name the assumption you dispute.</span></li>
+              <li><strong>Evidence review</strong><span>Lyra and Vale test relevance and credibility.</span></li>
+              <li><strong>Public outcome</strong><span>Reopen, revise, or leave the verdict unchanged.</span></li>
+            </ol>
             <p class="question" id="open-question"></p>
             <p id="evidence-wanted"></p>
             <div class="chair-actions">
