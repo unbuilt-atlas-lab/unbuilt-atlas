@@ -6,6 +6,12 @@ const site = JSON.parse(await readFile(new URL('../content/site.json', import.me
 const investigations = JSON.parse(await readFile(new URL('../content/investigations.json', import.meta.url)));
 const candidates = JSON.parse(await readFile(new URL('../content/candidates.json', import.meta.url)));
 const html = await readFile(new URL('../public/index.html', import.meta.url), 'utf8');
+const investigationsHtml = await readFile(new URL('../public/investigations.html', import.meta.url), 'utf8');
+const pipelineHtml = await readFile(new URL('../public/pipeline.html', import.meta.url), 'utf8');
+const caseHtml = await readFile(new URL('../public/case.html', import.meta.url), 'utf8');
+const thirdChairHtml = await readFile(new URL('../public/third-chair.html', import.meta.url), 'utf8');
+const supportHtml = await readFile(new URL('../public/support.html', import.meta.url), 'utf8');
+const publicPages = [html, investigationsHtml, pipelineHtml, caseHtml, thirdChairHtml, supportHtml];
 
 const requiredWallets = [
   'GA1zjTdMNSTfJFeLnA84bd4kyEHJuqZPSZsCuM3uyYx8',
@@ -87,11 +93,17 @@ test('The Third Chair opens only for an explicit question', () => {
   }
 });
 
-test('public shell contains required product markers and no former username', () => {
-  for (const marker of ['Unbuilt Atlas', 'The Third Chair', 'Spare a Byte', 'Vision board', 'Failed arguments', 'Public build pipeline', 'Daily opportunity screening']) {
-    assert.ok(html.includes(marker), `missing ${marker}`);
+test('public site is split into focused pages with no former username', () => {
+  assert.match(html, /AI-operated public research laboratory/);
+  assert.match(html, /Humans retain legal and security responsibility/);
+  assert.match(investigationsHtml, /Permanent case archive/);
+  assert.match(pipelineHtml, /Daily screening feed/);
+  assert.match(caseHtml, /Research transcript/);
+  assert.match(thirdChairHtml, /The Third Chair/);
+  assert.match(supportHtml, /Spare a Byte/);
+  for (const page of publicPages) {
+    assert.ok(!page.toLowerCase().includes('jjjawad'));
+    assert.match(page, /<main id="main">/);
+    assert.match(page, /class="skip-link"/);
   }
-  assert.ok(!html.toLowerCase().includes('jjjawad'));
-  assert.match(html, /<main id="main">/);
-  assert.match(html, /class="skip-link"/);
 });

@@ -64,7 +64,7 @@ Use compact prose. Do not add unsupported numeric estimates.
 6. If either fails, repair only the current change or revert the new record; never publish broken output.
 7. Commit with `screen: qualify <slug>` or `screen: discard <slug>` and push `main`.
 8. Verify GitHub CI for the new commit succeeds.
-9. Verify `https://unbuilt-atlas.pages.dev/content/candidates.json` contains the new ID and the public page returns HTTP 200.
+9. Verify `https://unbuilt-atlas.pages.dev/content/candidates.json` contains the new ID and `https://unbuilt-atlas.pages.dev/pipeline.html#candidate-<id>` returns HTTP 200.
 10. Report the candidate, disposition, decisive rationale, source count, commit, CI result, and public candidate anchor.
 
 If research or publication cannot be completed inside the run, make no partial public record. Report the blocker accurately.
