@@ -27,6 +27,35 @@
     ],
     "nextStep": "Reopen only if a narrow vertical or legacy accounting system shows an underserved migration problem that accredited providers will not solve; test that with a manual workflow audit before building software.",
     "promotedInvestigationId": null
+  },
+  {
+    "id": "2026-11-27-us-municipal-accessibility-remediation",
+    "researchedAt": "2026-11-27T02:08:13+04:00",
+    "title": "Accessibility remediation workflow for small US municipalities",
+    "country": "United States",
+    "industry": "GovTech and digital accessibility",
+    "status": "qualified",
+    "summary": "A managed workflow would inventory websites, mobile apps and public documents for smaller local governments, prioritize WCAG 2.1 AA remediation, coordinate human review and maintain evidence for the federal compliance deadline.",
+    "rationale": "The Department of Justice gives Title II entities serving fewer than 50,000 people until April 26, 2028 to meet WCAG 2.1 AA, while the Census Bureau reports thousands of municipal and township governments. The payer is the local government responsible for compliance, and W3C warns that tools alone cannot determine accessibility, leaving a specific wedge for inventory, human-reviewed remediation and evidence management rather than another scanner. A manual audit of public sites can test demand cheaply, and no obvious legal or technical constraint kills a services-first pilot.",
+    "evidence": [
+      {
+        "title": "State and Local Governments: First Steps Toward Complying with the ADA Title II Web and Mobile Application Accessibility Rule",
+        "url": "https://www.ada.gov/resources/web-rule-first-steps/",
+        "kind": "official"
+      },
+      {
+        "title": "Government Organization Summary Report: 2022 and 2025",
+        "url": "https://www.census.gov/library/publications/2026/econ/govtorg2225.html",
+        "kind": "official"
+      },
+      {
+        "title": "Evaluating Web Accessibility Overview",
+        "url": "https://www.w3.org/WAI/test-evaluate/",
+        "kind": "standard"
+      }
+    ],
+    "nextStep": "Audit 20 public websites from municipalities below 50,000 residents, produce five human-reviewed remediation backlogs, and continue only if two officials agree to a scoped paid pilot before software is built.",
+    "promotedInvestigationId": null
   }
 ]
 
