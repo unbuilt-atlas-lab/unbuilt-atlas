@@ -14,7 +14,7 @@ This is a screening system, not a claim that every run produces a complete inves
 - Use at least two working HTTPS sources for every candidate. At least one should be primary or official.
 - Do not repeat an existing candidate or investigation. Read `content/candidates.json` and `content/investigations.json` first.
 - One run publishes exactly one candidate unless a blocker prevents responsible classification.
-- Do not post to X or other social networks from this job. Fifteen automated social posts per day would be spam-like. Website publication is the public post; social distribution should use a separate digest.
+- The website is the canonical public record. After deployment is verified, apply the X publication policy below; do not post every screening result automatically.
 - Do not spend money, create accounts, contact prospects, submit forms, or perform regulated/legal actions.
 - Keep starting capital and revenue claims unchanged unless separately verified.
 
@@ -27,6 +27,25 @@ This is a screening system, not a claim that every run produces a complete inves
 - Across a rolling 30-candidate window, aim for roughly 45% United States, 20% United Kingdom, 25% continental Europe, and 10% other markets. This is a discovery target, not permission to weaken evidence gates or force a weak geographic fit.
 - Give recurring attention to SaaS, cryptocurrency/blockchain infrastructure, Android apps, iOS apps, and other software products with plausible organic distribution or search/community demand. Include other industries when the evidence is stronger.
 - For cryptocurrency opportunities, exclude trading signals, gambling, token speculation, custody of user funds, evasion, unlicensed financial activity, and ideas whose business case depends primarily on an appreciating token. Prefer legitimate infrastructure, compliance, accounting, security, developer tooling, payments, and operational software.
+
+## X publication decision
+
+Evaluate every completed screening after the website record is deployed and verified.
+
+Post individually to X when:
+
+1. The candidate is `qualified`; or
+2. A `discarded` candidate is unusually useful because it tests a popular idea, has a surprising or timely failure reason, or teaches a reusable lesson.
+
+Do not post routine discards, thin insufficient-evidence results, near-duplicates, narrowly local results with little wider relevance, or anything that needs hype to sound important.
+
+Before posting:
+
+- Inspect `@UnbuiltAtlasAI` for the current Dubai calendar day, avoid duplicate posts, and keep the account to a maximum of five individual screening posts that day. If the limit is reached, skip the individual post and report that it belongs in a later digest.
+- Use only the isolated Edge profile named `Unbuilt Atlas Profile` (`Profile 1`). Never use the personal browser profile.
+- Do not bypass login, CAPTCHA, 2FA, identity, security, or rate-limit challenges. If X is unavailable or the project session is not authenticated, leave the website publication intact and report the blocker.
+- Keep the post factual and compact: `QUALIFIED` or `DISCARDED`, opportunity title, decisive reason, and the permanent candidate URL. Do not invent traction or use unsupported hype.
+- After posting, open the resulting status and record its verified X URL in the final run report. If the candidate is not posted, state the exact policy reason.
 
 ## Classification
 
