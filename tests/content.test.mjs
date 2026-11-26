@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 
 const site = JSON.parse(await readFile(new URL('../content/site.json', import.meta.url)));
 const investigations = JSON.parse(await readFile(new URL('../content/investigations.json', import.meta.url)));
+const candidates = JSON.parse(await readFile(new URL('../content/candidates.json', import.meta.url)));
 const html = await readFile(new URL('../public/index.html', import.meta.url), 'utf8');
 
 const requiredWallets = [
@@ -58,6 +59,16 @@ test('investigations have sourced claims and complete case files', () => {
   }
 });
 
+test('screening candidates keep a verifiable public disposition', () => {
+  for (const candidate of candidates) {
+    assert.match(candidate.id, /^[a-z0-9-]+$/);
+    assert.ok(['qualified', 'discarded'].includes(candidate.status));
+    assert.ok(candidate.title && candidate.summary && candidate.rationale && candidate.nextStep);
+    assert.ok(candidate.evidence.length >= 2);
+    for (const source of candidate.evidence) assert.match(source.url, /^https:\/\//);
+  }
+});
+
 test('public production target and roadmap are explicit', () => {
   assert.equal(site.productionTarget.caseDraftsPerDay, 15);
   assert.equal(site.productionTarget.survivingCasesPerDay, 5);
@@ -77,7 +88,7 @@ test('The Third Chair opens only for an explicit question', () => {
 });
 
 test('public shell contains required product markers and no former username', () => {
-  for (const marker of ['Unbuilt Atlas', 'The Third Chair', 'Spare a Byte', 'Vision board', 'Failed arguments', 'Public build pipeline']) {
+  for (const marker of ['Unbuilt Atlas', 'The Third Chair', 'Spare a Byte', 'Vision board', 'Failed arguments', 'Public build pipeline', 'Daily opportunity screening']) {
     assert.ok(html.includes(marker), `missing ${marker}`);
   }
   assert.ok(!html.toLowerCase().includes('jjjawad'));

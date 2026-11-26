@@ -2,12 +2,13 @@ const $ = selector => document.querySelector(selector);
 const escapeHtml = value => String(value).replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[character]);
 
 async function loadData() {
-  const [siteResponse, investigationsResponse] = await Promise.all([
+  const [siteResponse, investigationsResponse, candidatesResponse] = await Promise.all([
     fetch('/content/site.json'),
-    fetch('/content/investigations.json')
+    fetch('/content/investigations.json'),
+    fetch('/content/candidates.json')
   ]);
-  if (!siteResponse.ok || !investigationsResponse.ok) throw new Error('The research ledger could not be loaded.');
-  return { site: await siteResponse.json(), investigations: await investigationsResponse.json() };
+  if (!siteResponse.ok || !investigationsResponse.ok || !candidatesResponse.ok) throw new Error('The research ledger could not be loaded.');
+  return { site: await siteResponse.json(), investigations: await investigationsResponse.json(), candidates: await candidatesResponse.json() };
 }
 
 function renderAgents(agents) {
@@ -117,6 +118,23 @@ function renderBoard(investigations) {
         <div class="idea-meta"><div><span>Customer</span><strong>${escapeHtml(idea.customer)}</strong></div><div><span>First test</span><strong>${escapeHtml(idea.firstTest)}</strong></div><div><span>Verdict</span><strong>${escapeHtml(investigation.verdict.decision)}</strong></div></div>
       </article>`;
   }).join('');
+}
+
+function renderScreeningFeed(candidates) {
+  const ordered = [...candidates].sort((a, b) => b.researchedAt.localeCompare(a.researchedAt));
+  const qualified = ordered.filter(candidate => candidate.status === 'qualified').length;
+  const discarded = ordered.filter(candidate => candidate.status === 'discarded').length;
+  $('#feed-stats').innerHTML = `<div><strong>${ordered.length}</strong><span>Total screened</span></div><div><strong>${qualified}</strong><span>Qualified</span></div><div><strong>${discarded}</strong><span>Discarded</span></div>`;
+  if (!ordered.length) {
+    $('#candidate-feed').innerHTML = '<div class="feed-empty"><strong>The screening ledger is ready.</strong><p>The first scheduled research result will appear here after it is sourced, classified and published.</p></div>';
+    return;
+  }
+  $('#candidate-feed').innerHTML = ordered.slice(0, 60).map(candidate => `
+    <article class="candidate-card ${escapeHtml(candidate.status)}" id="candidate-${escapeHtml(candidate.id)}">
+      <div class="candidate-state"><span>${escapeHtml(candidate.status)}</span><time datetime="${escapeHtml(candidate.researchedAt)}">${escapeHtml(candidate.researchedAt.slice(0, 10))}</time></div>
+      <div class="candidate-copy"><small>${escapeHtml(candidate.country)} · ${escapeHtml(candidate.industry)}</small><h3>${escapeHtml(candidate.title)}</h3><p>${escapeHtml(candidate.summary)}</p><strong>${escapeHtml(candidate.rationale)}</strong><div class="candidate-sources">${candidate.evidence.map(source => `<a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.title)} ↗</a>`).join('')}</div></div>
+      <div class="candidate-next"><span>Next action</span><p>${escapeHtml(candidate.nextStep)}</p>${candidate.promotedInvestigationId ? `<a href="?investigation=${encodeURIComponent(candidate.promotedInvestigationId)}#room">Open case file →</a>` : ''}</div>
+    </article>`).join('');
 }
 
 function renderPipeline(site) {
@@ -233,7 +251,7 @@ function restoreDeepLink() {
   }, 0);
 }
 
-function render({ site, investigations }) {
+function render({ site, investigations, candidates }) {
   const requestedId = new URLSearchParams(window.location.search).get('investigation');
   const investigation = investigations.find(item => item.id === requestedId) || investigations[0];
   $('#issue-label').textContent = `Investigation ${investigation.number} · ${investigation.country}`;
@@ -247,6 +265,7 @@ function render({ site, investigations }) {
   $('#disclosure').textContent = site.disclosure;
   renderAgents(site.agents);
   renderCaseIndex(investigations, investigation.id);
+  renderScreeningFeed(candidates);
   renderIdeaBrief(investigation);
   renderConfidence(investigation);
   renderEvidence(investigation);
