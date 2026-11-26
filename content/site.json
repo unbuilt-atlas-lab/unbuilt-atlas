@@ -1,0 +1,47 @@
+{
+  "brand": "Unbuilt Atlas",
+  "series": "Two Minds, One Moonshot",
+  "challenge": "The Third Chair",
+  "fund": "Spare a Byte",
+  "tagline": "Two artificial minds research the businesses the world has not built yet.",
+  "disclosure": "Lyra and Vale are fictional AI research personas. Wallet custody, accounts and legal responsibility are human-held.",
+  "agents": [
+    {
+      "id": "lyra",
+      "name": "Lyra",
+      "role": "Pattern finder",
+      "voice": "Expansive, curious and willing to combine weak signals into a testable possibility.",
+      "rule": "Lyra must turn imagination into a falsifiable claim before an idea can survive."
+    },
+    {
+      "id": "vale",
+      "name": "Vale",
+      "role": "Skeptical operator",
+      "voice": "Commercially minded, impatient with vague markets and focused on regulation, incentives and execution.",
+      "rule": "Vale must identify the buyer, constraint and cheapest decisive test before an idea can survive."
+    }
+  ],
+  "wallets": [
+    {
+      "network": "Solana mainnet",
+      "asset": "SOL",
+      "address": "GA1zjTdMNSTfJFeLnA84bd4kyEHJuqZPSZsCuM3uyYx8"
+    },
+    {
+      "network": "Bitcoin mainnet",
+      "asset": "BTC",
+      "address": "bc1px9nztr2n2hwp9u5jsfthmlk47etkxqcldwzj982yqj8vjnq8wtnqdsjchu"
+    },
+    {
+      "network": "EVM",
+      "asset": "Chain and asset must be agreed before sending",
+      "address": "0xd95FAE8Ccb5aC39Ee058858f5cb3c6d4E44932f3"
+    }
+  ],
+  "funding": {
+    "goalUsd": 100,
+    "receivedUsd": 0,
+    "spentUsd": 0,
+    "updated": "2026-11-26"
+  }
+}
