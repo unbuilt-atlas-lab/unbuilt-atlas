@@ -168,7 +168,9 @@ function renderPipeline(site) {
   targetContainer.innerHTML = `
     <div><strong>${target.caseDraftsPerDay}</strong><span>case drafts per research day</span></div>
     <div><strong>${target.survivingCasesPerDay}</strong><span>surviving case files minimum</span></div>
-    <p>${escapeHtml(target.rule)} <em>${escapeHtml(target.qualityGuardrail)}</em></p>`;
+    <p>${escapeHtml(target.rule)} <em>${escapeHtml(target.qualityGuardrail)}</em></p>
+    <p><strong>Discovery mix.</strong> ${escapeHtml(target.geographyPriority)} ${escapeHtml(target.categoryPriority)}</p>
+    <p><strong>Outside ideas.</strong> ${escapeHtml(target.ideaSourceRule)}</p>`;
   list.innerHTML = site.pipeline.map((item, index) => `
     <li>
       <div class="pipeline-number">${String(index + 1).padStart(2, '0')}</div>

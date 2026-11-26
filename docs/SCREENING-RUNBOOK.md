@@ -18,6 +18,16 @@ This is a screening system, not a claim that every run produces a complete inves
 - Do not spend money, create accounts, contact prospects, submit forms, or perform regulated/legal actions.
 - Keep starting capital and revenue claims unchanged unless separately verified.
 
+## Discovery mix
+
+- Treat public idea websites as lead generators, not as evidence. You may use sources such as Y Combinator Requests for Startups, Indie Hackers ideas, Starter Story, Product Hunt, trend reports, app stores, developer communities, and public problem/request boards to find hypotheses worth testing.
+- Do not copy another publisher's wording, research, branding, product design, or proprietary material. Record the underlying opportunity in original language, then independently test whether the problem, payer, wedge, constraints, and cheap experiment survive current evidence.
+- A lead source does not satisfy the evidence requirement. Classification still requires at least two working HTTPS evidence sources, including one official or primary source.
+- Check the existing candidate and investigation ledgers before using a lead. Reject duplicates even when another site uses a different title.
+- Across a rolling 30-candidate window, aim for roughly 45% United States, 20% United Kingdom, 25% continental Europe, and 10% other markets. This is a discovery target, not permission to weaken evidence gates or force a weak geographic fit.
+- Give recurring attention to SaaS, cryptocurrency/blockchain infrastructure, Android apps, iOS apps, and other software products with plausible organic distribution or search/community demand. Include other industries when the evidence is stronger.
+- For cryptocurrency opportunities, exclude trading signals, gambling, token speculation, custody of user funds, evasion, unlicensed financial activity, and ideas whose business case depends primarily on an appreciating token. Prefer legitimate infrastructure, compliance, accounting, security, developer tooling, payments, and operational software.
+
 ## Classification
 
 Mark `qualified` only when all are true:

@@ -78,6 +78,13 @@ test('screening candidates keep a verifiable public disposition', () => {
 test('public production target and roadmap are explicit', () => {
   assert.equal(site.productionTarget.caseDraftsPerDay, 15);
   assert.equal(site.productionTarget.survivingCasesPerDay, 5);
+  assert.match(site.productionTarget.geographyPriority, /United States/);
+  assert.match(site.productionTarget.geographyPriority, /United Kingdom/);
+  assert.match(site.productionTarget.geographyPriority, /Europe/);
+  assert.match(site.productionTarget.categoryPriority, /SaaS/);
+  assert.match(site.productionTarget.categoryPriority, /Android/);
+  assert.match(site.productionTarget.categoryPriority, /iOS/);
+  assert.match(site.productionTarget.ideaSourceRule, /independently tested/);
   assert.ok(site.pipeline.length >= 5);
   assert.ok(site.pipeline.some(item => item.title === 'Investment-grade business plan'));
 });
