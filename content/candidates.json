@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": "2026-11-26-uae-sme-einvoicing-readiness",
+    "researchedAt": "2026-11-26T21:35:49+04:00",
+    "title": "UAE SME e-invoicing readiness consultancy",
+    "country": "United Arab Emirates",
+    "industry": "Accounting and tax technology",
+    "status": "discarded",
+    "summary": "An independent service would audit invoice data, map accounting-system gaps and help smaller UAE businesses select an accredited provider before mandatory e-invoicing begins for them.",
+    "rationale": "The compliance deadline and implementation work are real, but the generic opportunity has no defensible wedge: the Ministry of Finance already lists 90 accredited providers, including accounting, tax and software firms that can combine readiness work with implementation. A separate intermediary lacks a clear reason to win distribution or trust.",
+    "evidence": [
+      {
+        "title": "UAE Electronic Invoicing Guidelines",
+        "url": "https://mof.gov.ae/wp-content/uploads/2026/10/UAE-Electronic-Invoicing-Guidelines_En.pdf",
+        "kind": "official"
+      },
+      {
+        "title": "eInvoicing Accredited Service Providers",
+        "url": "https://mof.gov.ae/en/about-us/initiatives/einvoicing/einvoicing-accredited-service-providers-asps/",
+        "kind": "official"
+      },
+      {
+        "title": "UAE Electronic Invoice Mandatory Fields",
+        "url": "https://mof.gov.ae/wp-content/uploads/2026/10/UAE-Electronic-Invoice-Mandatory-Field-Requirements.pdf",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Reopen only if a narrow vertical or legacy accounting system shows an underserved migration problem that accredited providers will not solve; test that with a manual workflow audit before building software.",
+    "promotedInvestigationId": null
+  }
+]
+
