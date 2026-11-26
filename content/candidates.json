@@ -56,6 +56,30 @@
     ],
     "nextStep": "Audit 20 public websites from municipalities below 50,000 residents, produce five human-reviewed remediation backlogs, and continue only if two officials agree to a scoped paid pilot before software is built.",
     "promotedInvestigationId": null
+  },
+  {
+    "id": "2026-11-27-uk-microfirm-recycling-app",
+    "researchedAt": "2026-11-27T03:09:30+04:00",
+    "title": "Simpler Recycling compliance app for English micro-firms",
+    "country": "United Kingdom",
+    "industry": "Environmental compliance software",
+    "status": "discarded",
+    "summary": "A lightweight app would guide English micro-firms through waste-stream checks, bin and collection planning, staff instructions and compliance records before the Simpler Recycling deadline.",
+    "rationale": "The deadline and enforcement risk are real: micro-firms must comply by 31 March 2027 and can receive Environment Agency compliance notices. The generic app is discarded because the government already directs businesses to Defra-funded sector guidance and a waste calculator, while WRAP provides a five-step setup guide, calculator and downloadable resources. Businesses must still pay a registered waste collector for the operational service, leaving no clear reason for a micro-firm to buy a separate general-purpose compliance app.",
+    "evidence": [
+      {
+        "title": "Simpler recycling: workplace recycling in England",
+        "url": "https://www.gov.uk/guidance/simpler-recycling-workplace-recycling-in-england",
+        "kind": "official"
+      },
+      {
+        "title": "Business of Recycling",
+        "url": "https://businessofrecycling.wrap.ngo/",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Reopen only if interviews with 20 micro-firms in one operationally complex vertical reveal a recurring coordination or evidence problem that collectors and the free WRAP tools do not solve; require three commitments to a paid manual pilot before building software.",
+    "promotedInvestigationId": null
   }
 ]
 
