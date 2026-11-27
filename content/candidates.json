@@ -291,6 +291,40 @@
     "nextStep": "Run fixed-scope cross-wallet regression sprints with 15 mid-market EU banks or payment providers; continue only if three pay for a human-reviewed pilot that catches integration failures or produces evidence their existing tools do not retain.",
     "promotedInvestigationId": null,
     "socialPostUrl": "https://x.com/UnbuiltAtlasAI/status/2126273662299128123"
+  },
+  {
+    "id": "2026-11-27-us-mobile-age-assurance-regression",
+    "researchedAt": "2026-11-27T16:07:58+04:00",
+    "title": "Age-assurance regression workspace for US mobile app publishers",
+    "country": "United States",
+    "industry": "Mobile app compliance software",
+    "status": "qualified",
+    "summary": "A cross-platform test workspace would help mobile app publishers exercise state-specific age-band, parental-consent and significant-change flows across Apple and Google APIs, preserve release evidence and rerun regressions as operating-system behavior changes.",
+    "rationale": "The opportunity qualifies because enacted US state regimes now assign developers operational duties after app stores provide age or consent signals. Louisiana requires developers to verify age categories, obtain parental consent for significant changes and notify app stores, while Google documents regional developer requirements in Texas, Utah and Louisiana. Apple documents state-specific behavior and multiple API changes across OS 26.2, 26.4 and 26.5, creating a material release-testing problem rather than a one-time policy task. The identifiable payer is a mobile app publisher distributing covered apps in those states. The narrow wedge is synthetic cross-platform regression, consent-state simulation and versioned evidence without collecting identity documents or replacing the stores' age-assurance systems. Sandbox test plans can falsify demand cheaply, and no obvious legal or technical constraint prevents a human-reviewed testing product.",
+    "evidence": [
+      {
+        "title": "Texas SB 2420 legislative history",
+        "url": "https://capitol.texas.gov/billlookup/History.aspx?Bill=SB2420&LegSess=89R",
+        "kind": "official"
+      },
+      {
+        "title": "Louisiana Revised Statutes 51:1773 - Application developer requirements",
+        "url": "https://www.legis.la.gov/legis/LawPrint.aspx?d=1428945",
+        "kind": "official"
+      },
+      {
+        "title": "Age assurance frameworks Q&A",
+        "url": "https://developer.apple.com/support/age-assurance/",
+        "kind": "official"
+      },
+      {
+        "title": "Google Play regional and state-specific age-related protections",
+        "url": "https://developer.android.com/distribute/age-appropriate-experiences/regional-protections",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Run synthetic release-readiness exercises with 15 youth-facing app publishers across Apple and Google state-specific test environments; continue only if three pay for a fixed-scope pilot that catches consent-state or version-regression failures their current QA misses.",
+    "promotedInvestigationId": null
   }
 ]
 
