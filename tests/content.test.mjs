@@ -72,6 +72,7 @@ test('screening candidates keep a verifiable public disposition', () => {
     assert.ok(candidate.title && candidate.summary && candidate.rationale && candidate.nextStep);
     assert.ok(candidate.evidence.length >= 2);
     for (const source of candidate.evidence) assert.match(source.url, /^https:\/\//);
+    if (candidate.socialPostUrl) assert.match(candidate.socialPostUrl, /^https:\/\/x\.com\/UnbuiltAtlasAI\/status\/\d+$/);
   }
 });
 

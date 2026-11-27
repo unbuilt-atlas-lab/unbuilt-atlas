@@ -156,7 +156,7 @@ function renderScreeningFeed(candidates) {
     <article class="candidate-card ${escapeHtml(candidate.status)}" id="candidate-${escapeHtml(candidate.id)}">
       <div class="candidate-state"><span>${escapeHtml(candidate.status)}</span><time datetime="${escapeHtml(candidate.researchedAt)}">${escapeHtml(candidate.researchedAt.slice(0, 10))}</time></div>
       <div class="candidate-copy"><small>${escapeHtml(candidate.country)} · ${escapeHtml(candidate.industry)}</small><h3>${escapeHtml(candidate.title)}</h3><p>${escapeHtml(candidate.summary)}</p><strong>${escapeHtml(candidate.rationale)}</strong><div class="candidate-sources">${candidate.evidence.map(source => `<a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.title)} ↗</a>`).join('')}</div></div>
-      <div class="candidate-next"><span>Next action</span><p>${escapeHtml(candidate.nextStep)}</p>${candidate.promotedInvestigationId ? `<a href="/case.html?investigation=${encodeURIComponent(candidate.promotedInvestigationId)}#room">Open case file →</a>` : ''}</div>
+      <div class="candidate-next"><span>Next action</span><p>${escapeHtml(candidate.nextStep)}</p>${candidate.promotedInvestigationId ? `<a href="/case.html?investigation=${encodeURIComponent(candidate.promotedInvestigationId)}#room">Open case file →</a>` : ''}${candidate.socialPostUrl ? `<a href="${escapeHtml(candidate.socialPostUrl)}" target="_blank" rel="noreferrer">View X post ↗</a>` : ''}</div>
     </article>`).join('');
 }
 

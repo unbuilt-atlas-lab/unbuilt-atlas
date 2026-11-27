@@ -77,11 +77,12 @@ Append one object to `content/candidates.json` with exactly this shape:
     {"title": "Source title", "url": "https://...", "kind": "official|primary-research|filing|standard|academic"}
   ],
   "nextStep": "The cheapest decisive next action.",
-  "promotedInvestigationId": null
+  "promotedInvestigationId": null,
+  "socialPostUrl": "Optional verified https://x.com/UnbuiltAtlasAI/status/... URL"
 }
 ```
 
-Use compact prose. Do not add unsupported numeric estimates.
+Use compact prose. Do not add unsupported numeric estimates. Omit `socialPostUrl` when no X post was published. When a post is published, add only the verified permanent status URL and commit that read-back to the ledger.
 
 ## Publication workflow
 
