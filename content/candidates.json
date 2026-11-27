@@ -109,6 +109,35 @@
     ],
     "nextStep": "Run CRA incident table-top exercises with 15 smaller EU software manufacturers using the official reporting fields; continue only if three agree to pay for a human-reviewed readiness pilot before building integrations.",
     "promotedInvestigationId": null
+  },
+  {
+    "id": "2026-11-27-us-drop-deletion-orchestration",
+    "researchedAt": "2026-11-27T07:10:22+04:00",
+    "title": "DROP deletion orchestration for California data brokers",
+    "country": "United States",
+    "industry": "Privacy compliance software",
+    "status": "qualified",
+    "summary": "A managed connector would help California data brokers move DROP deletion lists through identifier standardization, internal data stores, downstream service providers, recurring suppression checks and status reporting without replacing the state's official platform.",
+    "rationale": "The opportunity qualifies because California data brokers have had to process DROP requests since 1 August 2026, normally at least once every 45 days, and the official workflow requires downloading requests, standardizing and hashing records, matching, deletion and status reporting. The regulations extend the work beyond a simple API call: matched personal information must be deleted, service providers and contractors must be directed to delete, and unmatched requests must be checked against newly collected records before sale or sharing. The identifiable payer is the regulated data broker, while the state supports either an API or manual exchange, creating a narrow wedge for orchestration and evidence across the broker's systems rather than a competing request portal. A shadow processing exercise can test the workflow cheaply, and no obvious legal or technical constraint prevents a human-reviewed integration product.",
+    "evidence": [
+      {
+        "title": "DROP for data brokers",
+        "url": "https://privacy.ca.gov/drop-for-data-brokers/",
+        "kind": "official"
+      },
+      {
+        "title": "DROP technical documentation",
+        "url": "https://privacy.ca.gov/drop-for-data-brokers/technical-specifications/",
+        "kind": "official"
+      },
+      {
+        "title": "Data Broker Registration and Accessible Deletion Mechanism Regulations",
+        "url": "https://cppa.ca.gov/regulations/pdf/data_broker_drop_reg.pdf",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Run a manual shadow batch with 15 California data brokers, mapping one DROP list through internal records, downstream vendors and suppression controls; continue only if three agree to pay for a human-reviewed pilot before a production connector is built.",
+    "promotedInvestigationId": null
   }
 ]
 
