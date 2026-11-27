@@ -349,6 +349,35 @@
     ],
     "nextStep": "Run synthetic export and switching drills with 15 EU-facing SaaS providers; continue only if three pay for a fixed-scope pilot that finds portability failures or produces evidence their existing release process does not retain.",
     "promotedInvestigationId": null
+  },
+  {
+    "id": "2026-11-27-uk-carf-filing-validation",
+    "researchedAt": "2026-11-27T20:07:42+04:00",
+    "title": "CARF filing validation workspace for UK cryptoasset providers",
+    "country": "United Kingdom",
+    "industry": "Cryptoasset tax compliance software",
+    "status": "qualified",
+    "summary": "A pre-submission validation workspace would help UK cryptoasset service providers check CARF user due-diligence records, transaction totals and XML files against HMRC and OECD requirements before filing.",
+    "rationale": "The opportunity qualifies because UK reporting cryptoasset service providers must collect user and transaction data from 1 January 2026 and submit the first annual report by 31 May 2027. HMRC requires identity and tax-residence data, specified transaction totals and XML-formatted submissions, and says invalid or incomplete files may be rejected and can expose providers to penalties. The identifiable payer is the exchange, broker, dealer or other covered service provider responsible for the report. The narrow wedge is pre-submission schema, completeness and reconciliation testing with versioned evidence rather than tax advice, custody or a competing filing portal. A synthetic-file review can test demand cheaply, and no obvious legal or technical constraint prevents a human-reviewed validation service.",
+    "evidence": [
+      {
+        "title": "Reporting cryptoasset user and transaction data",
+        "url": "https://www.gov.uk/guidance/reporting-cryptoasset-user-and-transaction-data",
+        "kind": "official"
+      },
+      {
+        "title": "Check if you need to report cryptoasset data to HMRC",
+        "url": "https://www.gov.uk/guidance/check-if-youll-need-to-report-cryptoasset-data-to-hmrc",
+        "kind": "official"
+      },
+      {
+        "title": "Collecting cryptoasset user and transaction data",
+        "url": "https://www.gov.uk/guidance/collecting-cryptoasset-user-and-transaction-data",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Review synthetic CARF files with 15 UK cryptoasset service providers; continue only if three pay for a fixed-scope pilot that catches schema, due-diligence or transaction-reconciliation failures before HMRC submission.",
+    "promotedInvestigationId": null
   }
 ]
 
