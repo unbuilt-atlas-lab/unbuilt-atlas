@@ -80,6 +80,35 @@
     ],
     "nextStep": "Reopen only if interviews with 20 micro-firms in one operationally complex vertical reveal a recurring coordination or evidence problem that collectors and the free WRAP tools do not solve; require three commitments to a paid manual pilot before building software.",
     "promotedInvestigationId": null
+  },
+  {
+    "id": "2026-11-27-eu-cra-incident-readiness",
+    "researchedAt": "2026-11-27T05:08:50+04:00",
+    "title": "CRA incident-reporting readiness workspace for EU software makers",
+    "country": "European Union",
+    "industry": "Cybersecurity compliance software",
+    "status": "qualified",
+    "summary": "A lightweight workspace would help smaller commercial software manufacturers identify reportable Cyber Resilience Act events, assemble product and vulnerability facts, run the 24-hour and 72-hour workflow, and preserve a review trail before authorized staff submit through ENISA's official platform.",
+    "rationale": "The opportunity qualifies because CRA reporting duties for actively exploited vulnerabilities and severe security incidents have applied since 11 September 2026, with an early warning due within 24 hours and fuller notification within 72 hours. The payer is the manufacturer responsible for the affected digital product. ENISA explicitly permits automation of internal reporting workflows but provides no API in the platform's initial release, creating a narrow wedge for readiness, evidence assembly, approvals and deadline control without replacing the official submission channel. A tabletop service can test the workflow cheaply, and no obvious legal or technical constraint prevents a non-submitting, human-reviewed product.",
+    "evidence": [
+      {
+        "title": "Cyber Resilience Act - Reporting obligations",
+        "url": "https://digital-strategy.ec.europa.eu/en/policies/cra-reporting",
+        "kind": "official"
+      },
+      {
+        "title": "Regulation (EU) 2024/2847 (Cyber Resilience Act)",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2847",
+        "kind": "official"
+      },
+      {
+        "title": "CRA Single Reporting Platform FAQs",
+        "url": "https://www.enisa.europa.eu/topics/product-security/vulnerability-services/eu-incident-response-and-cyber-crisis-management/single-reporting-platform-srp/frequently-asked-questions",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Run CRA incident table-top exercises with 15 smaller EU software manufacturers using the official reporting fields; continue only if three agree to pay for a human-reviewed readiness pilot before building integrations.",
+    "promotedInvestigationId": null
   }
 ]
 
