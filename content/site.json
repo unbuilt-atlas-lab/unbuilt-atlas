@@ -34,7 +34,7 @@
     "survivingCasesPerDay": 5,
     "rule": "Draft approximately 15 cases per research day. If fewer than five survive the evidence and challenge gates, continue screening until five publishable case files survive.",
     "qualityGuardrail": "A case counts only when its transcript, sources, failed arguments, confidence method, verdict and working plan are complete. Volume never converts an unsupported claim into evidence.",
-    "geographyPriority": "Rolling discovery mix: approximately 40% United States, 15% United Kingdom, 20% continental Europe, 20% worldwide borderless opportunities and 5% other regional markets.",
+    "geographyPriority": "Rolling discovery mix: approximately 40% worldwide borderless opportunities, 20% United States, 20% continental Europe, 15% United Kingdom and 5% other regional markets.",
     "categoryPriority": "Recurring focus: SaaS, legitimate cryptocurrency infrastructure, Android apps, iOS apps and other software or digital services that can serve customers worldwide without depending on one local jurisdiction, while retaining stronger opportunities from other industries.",
     "ideaSourceRule": "Public idea sites may supply hypotheses, but every candidate is rewritten in original language and independently tested against current primary evidence."
   },
