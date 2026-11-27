@@ -198,6 +198,35 @@
     "nextStep": "Offer a synthetic-data readiness exercise to 15 regional impacted plans, testing required API responses and cross-system handoffs; continue only if three agree to pay for a fixed-scope conformance pilot before a hosted product is built.",
     "promotedInvestigationId": null,
     "socialPostUrl": "https://x.com/UnbuiltAtlasAI/status/2126197505180459214"
+  },
+  {
+    "id": "2026-11-27-uk-acsp-identity-evidence",
+    "researchedAt": "2026-11-27T11:07:25+04:00",
+    "title": "Identity-check evidence workspace for UK company formation agents",
+    "country": "United Kingdom",
+    "industry": "Corporate compliance software",
+    "status": "qualified",
+    "summary": "A lightweight evidence and quality-control workspace would help smaller Authorised Corporate Service Providers complete every Companies House identity-verification step, cover gaps left by commercial identity tools and retain a defensible seven-year record.",
+    "rationale": "The opportunity qualifies because Companies House requires authorised agents to complete every step of its identity-verification standard, remain responsible when a commercial provider performs only part of the check and keep document copies and check records for seven years. Companies House can request the records, and non-compliance can lead to an offence, fines, prosecution or suspension that stops the agent filing or verifying clients. The identifiable payer is the accounting, legal or company-formation firm acting as an Authorised Corporate Service Provider, while the narrow wedge is evidence completeness, review and request readiness rather than another biometric or document-checking engine. A retrospective file audit can test demand cheaply, and no obvious legal or technical constraint prevents a human-reviewed workflow that leaves the verification decision with the agent.",
+    "evidence": [
+      {
+        "title": "How to meet Companies House identity verification standard",
+        "url": "https://www.gov.uk/guidance/how-to-meet-companies-house-identity-verification-standard",
+        "kind": "official"
+      },
+      {
+        "title": "Being an Authorised Corporate Service Provider",
+        "url": "https://www.gov.uk/guidance/being-an-authorised-corporate-service-provider",
+        "kind": "official"
+      },
+      {
+        "title": "Ceased or suspended Authorised Corporate Service Providers",
+        "url": "https://www.gov.uk/government/publications/ceased-or-suspended-authorised-corporate-service-providers-acsps",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Audit 30 completed identity-check files across 15 smaller authorised agents against the official six-step standard; continue only if three firms have recurring evidence gaps and agree to pay for a human-reviewed remediation pilot before software is built.",
+    "promotedInvestigationId": null
   }
 ]
 
