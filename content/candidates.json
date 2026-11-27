@@ -325,6 +325,30 @@
     ],
     "nextStep": "Run synthetic release-readiness exercises with 15 youth-facing app publishers across Apple and Google state-specific test environments; continue only if three pay for a fixed-scope pilot that catches consent-state or version-regression failures their current QA misses.",
     "promotedInvestigationId": null
+  },
+  {
+    "id": "2026-11-27-eu-data-act-switching-regression",
+    "researchedAt": "2026-11-27T18:05:00+04:00",
+    "title": "Data Act switching regression workspace for EU SaaS providers",
+    "country": "European Union",
+    "industry": "SaaS compliance and portability testing",
+    "status": "qualified",
+    "summary": "A managed test workspace would help SaaS providers serving EU customers exercise export and provider-switching workflows, document open-interface and machine-readable-format behavior, and retain versioned evidence as products and interoperability specifications change.",
+    "rationale": "The opportunity qualifies because the EU Data Act has applied since 12 September 2025 and covers software delivered as a data processing service. Providers must remove switching obstacles, offer open interfaces and at least machine-readable export, while switching and data-egress charges must disappear from 12 January 2027. The Commission also says harmonised interoperability specifications are still being developed to close a current standards gap. The identifiable payer is the SaaS provider responsible for its customer-switching workflow. The narrow wedge is repeatable synthetic export, transition and evidence testing rather than legal advice or a migration marketplace. A fixed-scope portability drill can test demand cheaply, and no obvious legal or technical constraint prevents a human-reviewed conformance service.",
+    "evidence": [
+      {
+        "title": "Data Act explained",
+        "url": "https://digital-strategy.ec.europa.eu/en/factpages/data-act-explained",
+        "kind": "official"
+      },
+      {
+        "title": "Results of the study on interoperability of data processing services",
+        "url": "https://digital-strategy.ec.europa.eu/en/library/results-study-interoperability-data-processing-services",
+        "kind": "primary-research"
+      }
+    ],
+    "nextStep": "Run synthetic export and switching drills with 15 EU-facing SaaS providers; continue only if three pay for a fixed-scope pilot that finds portability failures or produces evidence their existing release process does not retain.",
+    "promotedInvestigationId": null
   }
 ]
 
