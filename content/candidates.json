@@ -378,6 +378,40 @@
     ],
     "nextStep": "Review synthetic CARF files with 15 UK cryptoasset service providers; continue only if three pay for a fixed-scope pilot that catches schema, due-diligence or transaction-reconciliation failures before HMRC submission.",
     "promotedInvestigationId": null
+  },
+  {
+    "id": "2026-11-27-worldwide-ios-privacy-release-gate",
+    "researchedAt": "2026-11-27T21:05:00+04:00",
+    "title": "iOS privacy-manifest release gate for app publishers",
+    "country": "Worldwide",
+    "industry": "iOS developer tooling and app privacy compliance",
+    "status": "qualified",
+    "summary": "A CI-connected release gate would help iOS app publishers detect privacy-manifest, required-reason API, SDK-signature and App Store privacy-label drift before submission.",
+    "rationale": "The opportunity qualifies because Apple rejects submissions containing invalid privacy manifests and requires valid manifests for commonly used third-party SDKs. Publishers remain responsible for third-party code and for keeping App Store privacy answers accurate as SDKs and data practices change. Xcode aggregates SDK manifests into a report, leaving a narrower recurring wedge: diff each built release against the prior dependency set and declared App Store answers, flag unexplained API or data changes, and preserve review evidence before submission. The identifiable payer is an app publisher with recurring releases and multiple SDK dependencies. A read-only audit of archived builds can test demand cheaply, and no obvious legal or technical constraint prevents a human-reviewed CI tool that does not submit apps or make legal determinations.",
+    "evidence": [
+      {
+        "title": "Privacy manifest files",
+        "url": "https://developer.apple.com/documentation/bundleresources/privacy-manifest-files",
+        "kind": "official"
+      },
+      {
+        "title": "Third-party SDK requirements",
+        "url": "https://developer.apple.com/support/third-party-SDK-requirements/",
+        "kind": "official"
+      },
+      {
+        "title": "Adding a privacy manifest to your app or third-party SDK",
+        "url": "https://developer.apple.com/documentation/bundleresources/adding-a-privacy-manifest-to-your-app-or-third-party-sdk",
+        "kind": "official"
+      },
+      {
+        "title": "App privacy details on the App Store",
+        "url": "https://developer.apple.com/app-store/app-privacy-details/",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Audit archived builds from 15 frequently updated iOS apps; continue only if three publishers pay for a fixed-scope pilot that catches manifest, SDK-signature or privacy-label drift their current release process misses.",
+    "promotedInvestigationId": null
   }
 ]
 
