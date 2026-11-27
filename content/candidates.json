@@ -289,7 +289,8 @@
       }
     ],
     "nextStep": "Run fixed-scope cross-wallet regression sprints with 15 mid-market EU banks or payment providers; continue only if three pay for a human-reviewed pilot that catches integration failures or produces evidence their existing tools do not retain.",
-    "promotedInvestigationId": null
+    "promotedInvestigationId": null,
+    "socialPostUrl": "https://x.com/UnbuiltAtlasAI/status/2126273662299128123"
   }
 ]
 
