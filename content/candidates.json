@@ -412,6 +412,35 @@
     ],
     "nextStep": "Audit archived builds from 15 frequently updated iOS apps; continue only if three publishers pay for a fixed-scope pilot that catches manifest, SDK-signature or privacy-label drift their current release process misses.",
     "promotedInvestigationId": null
+  },
+  {
+    "id": "2026-11-27-worldwide-android-16kb-regression-gate",
+    "researchedAt": "2026-11-27T23:05:00+04:00",
+    "title": "16 KB Android runtime regression gate for app publishers",
+    "country": "Worldwide",
+    "industry": "Android developer tooling and app compatibility",
+    "status": "qualified",
+    "summary": "A CI-connected test gate would help Android app publishers inventory native dependencies, exercise critical flows on 16 KB page-size devices and preserve release evidence before Google Play submissions.",
+    "rationale": "The opportunity qualifies because Google Play requires new apps and updates targeting Android 15 or higher to support 16 KB page sizes from 1 February 2027. Google says apps with native code, including native libraries brought in by SDKs, must be rebuilt and tested in a 16 KB environment; its tooling can flag alignment problems, but compatibility mode and static checks do not replace runtime testing. Play's pre-launch report helps detect stability and compatibility issues, yet its automated crawler may not reach every important flow and custom tests are limited. The identifiable payer is an app publisher whose release depends on native SDKs or libraries. The narrow wedge is dependency-change detection plus app-specific 16 KB runtime regression and evidence, not another emulator or app store. A read-only bundle audit and scripted core-flow test can falsify demand cheaply, and no obvious legal or technical constraint prevents a human-reviewed CI service.",
+    "evidence": [
+      {
+        "title": "Support 16 KB page sizes",
+        "url": "https://developer.android.com/guide/practices/page-sizes",
+        "kind": "official"
+      },
+      {
+        "title": "Use a pre-launch report to identify issues",
+        "url": "https://support.google.com/googleplay/android-developer/answer/9842757",
+        "kind": "official"
+      },
+      {
+        "title": "Understand your pre-launch report",
+        "url": "https://support.google.com/googleplay/android-developer/answer/9844487",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Audit 15 frequently updated Android apps with native dependencies and run their critical flows in a 16 KB test environment; continue only if three publishers pay for a fixed-scope pilot that catches runtime failures or dependency regressions their current Play checks miss.",
+    "promotedInvestigationId": null
   }
 ]
 
