@@ -82,6 +82,7 @@ test('public production target and roadmap are explicit', () => {
   assert.match(site.productionTarget.geographyPriority, /United States/);
   assert.match(site.productionTarget.geographyPriority, /United Kingdom/);
   assert.match(site.productionTarget.geographyPriority, /Europe/);
+  assert.match(site.productionTarget.geographyPriority, /worldwide/i);
   assert.match(site.productionTarget.categoryPriority, /SaaS/);
   assert.match(site.productionTarget.categoryPriority, /Android/);
   assert.match(site.productionTarget.categoryPriority, /iOS/);
