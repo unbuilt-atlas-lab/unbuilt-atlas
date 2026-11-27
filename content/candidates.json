@@ -138,6 +138,35 @@
     ],
     "nextStep": "Run a manual shadow batch with 15 California data brokers, mapping one DROP list through internal records, downstream vendors and suppression controls; continue only if three agree to pay for a human-reviewed pilot before a production connector is built.",
     "promotedInvestigationId": null
+  },
+  {
+    "id": "2026-11-27-eu-lmt-battery-passport-readiness",
+    "researchedAt": "2026-11-27T08:09:09+04:00",
+    "title": "Battery passport readiness workspace for EU e-bike importers",
+    "country": "European Union",
+    "industry": "Battery compliance software",
+    "status": "qualified",
+    "summary": "A readiness workspace would help importers placing e-bike, e-moped and e-scooter batteries on the EU market collect supplier data, determine field applicability, validate passport records and coordinate QR-code and registry handoff before the 2027 mandate.",
+    "rationale": "The opportunity qualifies because each light-means-of-transport battery placed on the EU market must have a battery passport from 18 February 2027, and the economic operator placing the finished battery on the market is responsible for keeping its information accurate, complete and current. Commission guidance consolidates 71 potentially relevant data points and explicitly points organisations toward aligning internal processes, data systems and reporting practices. The identifiable payer is the importer responsible for the finished battery, while the decentralised technical model leaves a narrow wedge for supplier-data intake, applicability mapping, validation and evidence management rather than a generic QR generator or replacement for the EU registry. A manual SKU-mapping service can test the workflow cheaply, and no obvious legal or technical constraint prevents a human-reviewed readiness product.",
+    "evidence": [
+      {
+        "title": "Regulation (EU) 2023/1542 concerning batteries and waste batteries",
+        "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/ojn",
+        "kind": "official"
+      },
+      {
+        "title": "Digital Product Passport for Batteries",
+        "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/batteries_en",
+        "kind": "official"
+      },
+      {
+        "title": "Guidance to support preparations for the Digital Batteries Passport",
+        "url": "https://single-market-economy.ec.europa.eu/news/guidance-support-preparations-digital-batteries-passport-2026-08-21_en",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Map the official data fields for 10 battery SKUs across 15 EU e-bike or scooter importers; continue only if three agree to pay for a human-reviewed readiness pilot before a hosted passport product is built.",
+    "promotedInvestigationId": null
   }
 ]
 
