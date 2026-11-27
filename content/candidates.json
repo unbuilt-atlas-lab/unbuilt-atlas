@@ -256,6 +256,40 @@
     ],
     "nextStep": "Reopen only as an agency- or contract-specific service after reviewing 30 live solicitations and interviewing 15 federal software suppliers; continue only if one repeated evidence package appears and three suppliers agree to pay for a manual pilot.",
     "promotedInvestigationId": null
+  },
+  {
+    "id": "2026-11-27-eu-eudi-payment-conformance",
+    "researchedAt": "2026-11-27T15:09:01+04:00",
+    "title": "EUDI Wallet payment conformance workspace for EU payment providers",
+    "country": "European Union",
+    "industry": "Payment authentication infrastructure",
+    "status": "qualified",
+    "summary": "A managed test workspace would help banks and payment service providers validate EU Digital Identity Wallet strong-customer-authentication flows across national wallets, preserve versioned evidence and rerun regressions as standards and implementations change.",
+    "rationale": "The opportunity qualifies because the European Commission says covered service providers, including payment service providers, must accept EU Digital Identity Wallets for strong customer authentication when users request them by the end of 2027. Commission testing is already exercising production-bound wallets, issuers and readers under peer-to-peer conditions specifically to find interoperability problems, while its payment guidance says technical specifications remain subject to change. The identifiable payer is a non-small bank or payment provider that owns the relying-party integration. The narrow wedge is continuous cross-wallet regression, verifier-version evidence and release readiness rather than another wallet, identity provider or certification scheme. A manual test sprint against reference and partner wallets can falsify demand cheaply, and no obvious legal or technical constraint prevents a human-reviewed conformance service.",
+    "evidence": [
+      {
+        "title": "Regulation (EU) 2024/1183 establishing the European Digital Identity Framework",
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1183/oj",
+        "kind": "official"
+      },
+      {
+        "title": "Payment Authentication - EU Digital Identity Wallet",
+        "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/EUDIGITALIDENTITYWALLET/pages/935397429/Payment%2BAuthentication",
+        "kind": "official"
+      },
+      {
+        "title": "Launchpad Testing 2026 - EU Digital Identity Wallet",
+        "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/EUDIGITALIDENTITYWALLET/pages/989397497/Launchpad%2BTesting%2B2026",
+        "kind": "official"
+      },
+      {
+        "title": "Who Assures the Verifier? An Executable Assurance-Locus Audit of the European Digital Identity Wallet",
+        "url": "https://arxiv.org/abs/2609.26220",
+        "kind": "academic"
+      }
+    ],
+    "nextStep": "Run fixed-scope cross-wallet regression sprints with 15 mid-market EU banks or payment providers; continue only if three pay for a human-reviewed pilot that catches integration failures or produces evidence their existing tools do not retain.",
+    "promotedInvestigationId": null
   }
 ]
 
