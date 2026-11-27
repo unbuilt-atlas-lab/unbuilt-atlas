@@ -441,6 +441,35 @@
     ],
     "nextStep": "Audit 15 frequently updated Android apps with native dependencies and run their critical flows in a 16 KB test environment; continue only if three publishers pay for a fixed-scope pilot that catches runtime failures or dependency regressions their current Play checks miss.",
     "promotedInvestigationId": null
+  },
+  {
+    "id": "2026-11-28-worldwide-android-distributor-verification",
+    "researchedAt": "2026-11-28T00:07:19+04:00",
+    "title": "Android developer-verification rollout workspace for app distributors",
+    "country": "Worldwide",
+    "industry": "Android app-distribution infrastructure",
+    "status": "qualified",
+    "summary": "A managed integration workspace would help third-party Android app stores audit package and signing-key registration, prioritize developer outreach, add upload-time checks and coordinate delegated registration before global enforcement expands.",
+    "rationale": "The opportunity qualifies because Android developer verification is already live in four initial countries and Google says protections will expand globally across certified Android devices in 2027, including third-party stores and other installation sources. Google gives app distributors a March 2027 readiness target and recommends catalog audits, developer outreach, ingestion checks and delegated registration. The identifiable payer is the app distributor responsible for uninterrupted delivery of its catalog. The narrow wedge is rollout orchestration across catalog data, signing certificates, developer communications, OAuth consent and exception handling rather than another app store or identity service. Official APIs expose package-and-certificate status and delegated registration, but registration can involve ownership proofs, competing keys and review states, leaving recurring integration and evidence work. A read-only catalog audit can test demand cheaply, and no obvious legal or technical constraint prevents a human-reviewed implementation service.",
+    "evidence": [
+      {
+        "title": "Resources for app distributors",
+        "url": "https://developer.android.com/developer-verification/guides/distributor-resources",
+        "kind": "official"
+      },
+      {
+        "title": "Check app registration status with the Android Developer ID Status API",
+        "url": "https://developer.android.com/developer-verification/guides/check-registration-status",
+        "kind": "official"
+      },
+      {
+        "title": "Register package names with the Android Developer Console API",
+        "url": "https://developer.android.com/developer-verification/guides/developer-console-api",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Audit package and signing-certificate readiness for 10 regional or vertical Android app distributors; continue only if three pay for a fixed-scope rollout pilot covering catalog gaps, developer outreach and upload-time checks before building a hosted workspace.",
+    "promotedInvestigationId": null
   }
 ]
 
