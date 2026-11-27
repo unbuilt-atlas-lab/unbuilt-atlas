@@ -168,6 +168,35 @@
     "nextStep": "Map the official data fields for 10 battery SKUs across 15 EU e-bike or scooter importers; continue only if three agree to pay for a human-reviewed readiness pilot before a hosted passport product is built.",
     "promotedInvestigationId": null,
     "socialPostUrl": "https://x.com/UnbuiltAtlasAI/status/2126168042652721234"
+  },
+  {
+    "id": "2026-11-27-us-prior-auth-api-conformance",
+    "researchedAt": "2026-11-27T10:05:00+04:00",
+    "title": "Prior-authorization API conformance workspace for US health plans",
+    "country": "United States",
+    "industry": "Health insurance interoperability software",
+    "status": "qualified",
+    "summary": "A managed test workspace would help CMS-regulated health plans exercise required prior-authorization API behavior across payer, provider and EHR workflows, document failures and preserve readiness evidence before the 2027 compliance date.",
+    "rationale": "The opportunity qualifies because impacted Medicare Advantage, Medicaid, CHIP and federally facilitated exchange plans generally must implement a FHIR-based Prior Authorization API beginning 1 January 2027, including documentation requirements, request and response handling, specific denial reasons and authorization end conditions. CMS says real-world workflow, technical and operational barriers still slow adoption and is using an early-adopter initiative to close workflow gaps and technical handoffs. The identifiable payer is the regulated health plan, while the narrow wedge is independent conformance and end-to-end workflow testing rather than another production authorization platform. A fixed-scope tabletop and synthetic-data test can falsify demand cheaply, and no obvious legal or technical constraint prevents a human-reviewed readiness service that handles no live patient data.",
+    "evidence": [
+      {
+        "title": "CMS Interoperability and Prior Authorization Final Rule CMS-0057-F",
+        "url": "https://www.cms.gov/newsroom/fact-sheets/cms-interoperability-prior-authorization-final-rule-cms-0057-f",
+        "kind": "official"
+      },
+      {
+        "title": "Electronic Prior Authorization",
+        "url": "https://www.cms.gov/priorities/electronic-prior-authorization/overview",
+        "kind": "official"
+      },
+      {
+        "title": "CMS Announces Early Adopters to Advance Solutions for Electronic Prior Authorization",
+        "url": "https://www.cms.gov/newsroom/press-releases/cms-announces-early-adopters-advance-solutions-electronic-prior-authorization-accelerating-momentum",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Offer a synthetic-data readiness exercise to 15 regional impacted plans, testing required API responses and cross-system handoffs; continue only if three agree to pay for a fixed-scope conformance pilot before a hosted product is built.",
+    "promotedInvestigationId": null
   }
 ]
 
