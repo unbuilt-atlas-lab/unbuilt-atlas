@@ -227,6 +227,35 @@
     ],
     "nextStep": "Audit 30 completed identity-check files across 15 smaller authorised agents against the official six-step standard; continue only if three firms have recurring evidence gaps and agree to pay for a human-reviewed remediation pilot before software is built.",
     "promotedInvestigationId": null
+  },
+  {
+    "id": "2026-11-27-us-federal-software-attestation",
+    "researchedAt": "2026-11-27T13:06:53+04:00",
+    "title": "Federal software attestation workspace for US SaaS vendors",
+    "country": "United States",
+    "industry": "Government procurement compliance software",
+    "status": "discarded",
+    "summary": "A compliance workspace would help smaller software vendors selling to US federal agencies map secure-development evidence to NIST practices, complete a common attestation and reuse the record across procurements.",
+    "rationale": "The generic opportunity is discarded because its central premise is outdated. OMB Memorandum M-26-05 rescinded the government-wide memoranda that required agencies to obtain secure-software attestations and says agencies are no longer required to collect standardized attestations or use a common form. Agencies may instead tailor risk-based contract terms, while NIST describes the Secure Software Development Framework as recommendations rather than a checklist. CISA still publishes an attestation form, but the form does not restore a uniform mandate. Without a recurring common requirement, the payer, workflow and evidence package fragment by agency and contract, leaving no stable wedge for a general-purpose compliance product.",
+    "evidence": [
+      {
+        "title": "OMB Memorandum M-26-05: Adopting a Risk-based Approach to Software and Hardware Security",
+        "url": "https://www.whitehouse.gov/wp-content/uploads/2026/01/M-26-05-Adopting-a-Risk-based-Approach-to-Software-and-Hardware-Security.pdf",
+        "kind": "official"
+      },
+      {
+        "title": "NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1",
+        "url": "https://csrc.nist.gov/pubs/sp/800/218/final",
+        "kind": "standard"
+      },
+      {
+        "title": "Secure Software Development Attestation Form",
+        "url": "https://www.cisa.gov/sites/default/files/2025-06/Secure_Software_Development_Attestation_Form_508c.pdf",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Reopen only as an agency- or contract-specific service after reviewing 30 live solicitations and interviewing 15 federal software suppliers; continue only if one repeated evidence package appears and three suppliers agree to pay for a manual pilot.",
+    "promotedInvestigationId": null
   }
 ]
 
