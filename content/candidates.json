@@ -627,6 +627,40 @@
     ],
     "nextStep": "Audit model identifiers, provider configurations and fallback paths for 15 teams running production AI features; continue only if three pay for a fixed-scope migration pilot that finds undocumented dependencies or replacement-model regressions before building a hosted product.",
     "promotedInvestigationId": null
+  },
+  {
+    "id": "2026-11-28-worldwide-passkey-recovery-regression",
+    "researchedAt": "2026-11-28T13:06:47+04:00",
+    "title": "Passkey recovery regression workspace for consumer applications",
+    "country": "Worldwide",
+    "industry": "Identity security and authentication testing",
+    "status": "qualified",
+    "summary": "A cross-platform test workspace would help consumer application teams exercise passkey enrollment, cross-device sign-in, fallback and account-recovery journeys across browsers, devices and credential providers before authentication releases reach users.",
+    "rationale": "The opportunity qualifies because passkey deployment is not a single happy-path integration. Google documents distinct enrollment, authentication and recovery journeys, including cases where users lack the original device or passkey; Apple requires associated-domain and authorization-controller integration and supports upgrades from passwords to passkeys; NIST requires recovery methods that do not weaken the assurance of the authentication process. FIDO guidance says organisations should test end-to-end customer journeys across devices and operating systems and identifies recovery as a critical part of passkey deployment. The identifiable payer is a consumer product or identity team responsible for login completion and account security. The narrow wedge is synthetic cross-device and recovery regression with versioned evidence rather than another identity provider or credential wallet. A fixed test matrix against staging accounts can falsify demand cheaply, and no obvious legal or technical constraint prevents a human-reviewed service using test identities and non-production credentials.",
+    "evidence": [
+      {
+        "title": "Passkeys user journeys | Google for Developers",
+        "url": "https://developers.google.com/identity/passkeys/ux/user-journeys",
+        "kind": "official"
+      },
+      {
+        "title": "Supporting passkeys | Apple Developer Documentation",
+        "url": "https://developer.apple.com/documentation/authenticationservices/supporting-passkeys/",
+        "kind": "official"
+      },
+      {
+        "title": "Authenticator Event Management | NIST SP 800-63B",
+        "url": "https://pages.nist.gov/800-63-4/sp800-63b/events/",
+        "kind": "standard"
+      },
+      {
+        "title": "Displacing Password and OTP Authentication with Passkeys | FIDO Alliance",
+        "url": "https://fidoalliance.org/wp-content/uploads/2024/07/FIDO_EDWG_Displace-password-OTP-authentication-with-passkeys-FINAL_Approved.docx.pdf",
+        "kind": "standard"
+      }
+    ],
+    "nextStep": "Run a staging passkey and recovery test matrix with 15 consumer application teams across Apple, Android, Windows and common browser combinations; continue only if three pay for a fixed-scope pilot that catches journey failures or recovery weaknesses their current QA misses.",
+    "promotedInvestigationId": null
   }
 ]
 
