@@ -691,6 +691,35 @@
     "nextStep": "Audit 15 frequently updated Android apps and run their critical journeys across the official foldable configurations; continue only if three publishers pay for a fixed-scope pilot that catches adaptive-layout or state-continuity failures their current Play checks miss.",
     "promotedInvestigationId": null,
     "socialPostUrl": "https://x.com/UnbuiltAtlasAI/status/2126635365490708794"
+  },
+  {
+    "id": "2026-11-28-uk-payment-third-party-register",
+    "researchedAt": "2026-11-28T16:07:39+04:00",
+    "title": "Third-party reporting workspace for UK payment firms",
+    "country": "United Kingdom",
+    "industry": "Financial operational resilience software",
+    "status": "qualified",
+    "summary": "A managed workspace would help UK payment and e-money firms map material outsourced services, subcontractor chains and location data into the FCA's annual register and event-driven notification templates.",
+    "rationale": "The opportunity qualifies because FCA rules taking effect on 18 March 2027 require authorised payment institutions and electronic money institutions to maintain and submit a register of material third-party arrangements and notify the regulator when relevant arrangements begin, change or cease. The guidance requires structured information about services, dependencies, locations and subcontractor chains, while annual registers are due within 60 business days of the financial year end. The identifiable payer is the regulated payment or e-money firm responsible for accurate reporting. The narrow wedge is contract-to-template data mapping, change detection, validation and review evidence rather than generic vendor-risk software or a replacement for FCA submission channels. A manual register build from existing contracts can test demand cheaply, and no obvious legal or technical constraint prevents a human-reviewed workflow that leaves materiality decisions and filing approval with the firm.",
+    "evidence": [
+      {
+        "title": "Reporting material third party arrangements",
+        "url": "https://www.fca.org.uk/firms/outsourcing-and-operational-resilience/reporting-material-third-party-arrangements",
+        "kind": "official"
+      },
+      {
+        "title": "FG26/4: Material Third Party Reporting",
+        "url": "https://www.fca.org.uk/publication/finalised-guidance/fg26-4.pdf",
+        "kind": "official"
+      },
+      {
+        "title": "PS26/2: Operational Incident and Third Party Reporting",
+        "url": "https://www.fca.org.uk/publication/policy/ps26-2.pdf",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Build draft FCA registers from existing contracts for 15 smaller UK payment or e-money firms; continue only if three pay for a fixed-scope pilot that finds missing subcontractor, location or change-event data their current vendor-risk process does not retain.",
+    "promotedInvestigationId": null
   }
 ]
 
