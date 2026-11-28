@@ -470,6 +470,35 @@
     ],
     "nextStep": "Audit package and signing-certificate readiness for 10 regional or vertical Android app distributors; continue only if three pay for a fixed-scope rollout pilot covering catalog gaps, developer outreach and upload-time checks before building a hosted workspace.",
     "promotedInvestigationId": null
+  },
+  {
+    "id": "2026-11-28-worldwide-npm-trusted-publishing-migration",
+    "researchedAt": "2026-11-28T05:07:16+04:00",
+    "title": "Trusted-publishing migration workspace for npm package organizations",
+    "country": "Worldwide",
+    "industry": "Software supply-chain security",
+    "status": "qualified",
+    "summary": "A managed migration workspace would help organizations with many npm packages inventory legacy publishing credentials, map CI workflows to trusted-publisher configurations, test provenance and preserve rollout evidence before bypass-capable token publishing ends.",
+    "rationale": "The opportunity qualifies because npm is moving automated publishing from long-lived bypass-capable tokens toward OIDC trusted publishing, with granular access tokens using bypass 2FA no longer accepted for package publication from 1 January 2027. npm's trusted-publishing flow exchanges short-lived credentials from supported CI providers and generates provenance automatically, while its newer support for multiple configurations makes repository, workflow and environment mapping an organization-wide rollout problem rather than a single-package switch. The identifiable payer is a company responsible for publishing and maintaining multiple npm packages. The narrow wedge is cross-package credential inventory, configuration mapping, dry-run validation and exception tracking rather than another registry or CI platform. A read-only audit of package settings and workflow files can test demand cheaply, and no obvious legal or technical constraint prevents a human-reviewed migration service.",
+    "evidence": [
+      {
+        "title": "Trusted publishing for npm packages",
+        "url": "https://docs.npmjs.com/trusted-publishers/",
+        "kind": "official"
+      },
+      {
+        "title": "npm install-time security and GAT bypass2fa deprecation",
+        "url": "https://github.blog/changelog/2026-07-08-npm-install-time-security-and-gat-bypass2fa-deprecation/",
+        "kind": "official"
+      },
+      {
+        "title": "Multiple trusted publishing configurations for npm",
+        "url": "https://github.blog/changelog/2026-09-03-multiple-trusted-publishing-configurations-for-npm/",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Audit publishing credentials and CI workflows across 15 organizations that maintain at least 10 npm packages; continue only if three pay for a fixed-scope migration pilot that finds legacy tokens, configuration gaps or provenance failures before building a hosted product.",
+    "promotedInvestigationId": null
   }
 ]
 
