@@ -45,7 +45,8 @@ Before posting:
 - Inspect `@UnbuiltAtlasAI` for the current Dubai calendar day, avoid duplicate posts, and keep the account to a maximum of five individual screening posts that day. If the limit is reached, skip the individual post and report that it belongs in a later digest.
 - Use only the isolated Edge profile named `Unbuilt Atlas Profile` (`Profile 1`). Never use the personal browser profile.
 - Do not bypass login, CAPTCHA, 2FA, identity, security, or rate-limit challenges. If X is unavailable or the project session is not authenticated, leave the website publication intact and report the blocker.
-- Keep the post factual and compact: `QUALIFIED` or `DISCARDED`, opportunity title, decisive reason, and the permanent candidate URL. Do not invent traction or use unsupported hype.
+- Keep the post factual and compact: `QUALIFIED` or `DISCARDED`, opportunity title, decisive reason, and the permanent candidate URL. Write fresh copy for that specific candidate; do not reuse or copy-paste a previous post.
+- Enter the post through normal typing in the X composer. Do not use clipboard paste, bulk `set_value`, injected JavaScript, or copied template text. Type in short natural chunks, pause when needed, and inspect the composer afterward to verify that every character and the full URL appeared exactly once. If reliable typing fails, do not fall back to paste—leave the website publication intact, report the blocker, and include the proposed draft for manual posting.
 - After posting, open the resulting status and record its verified X URL in the final run report. If the candidate is not posted, state the exact policy reason.
 
 ## Classification
