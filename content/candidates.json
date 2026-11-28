@@ -564,6 +564,35 @@
     ],
     "nextStep": "Review current PQC roadmaps and dependency evidence with 15 financial institutions; continue only if three pay for a fixed-scope pilot that identifies missing supplier plans, milestone drift or unmapped cryptographic dependencies before building a hosted workspace.",
     "promotedInvestigationId": null
+  },
+  {
+    "id": "2026-11-28-worldwide-tls-renewal-resilience",
+    "researchedAt": "2026-11-28T10:06:47+04:00",
+    "title": "Short-lived TLS renewal resilience gate for digital services",
+    "country": "Worldwide",
+    "industry": "Cloud reliability and certificate lifecycle testing",
+    "status": "qualified",
+    "summary": "A release and operations gate would help digital-service teams inventory public TLS endpoints, test automated renewal and certificate deployment across mixed infrastructure, and preserve evidence that critical paths survive increasingly short certificate lifetimes.",
+    "rationale": "The opportunity qualifies because the CA/Browser Forum has adopted a staged reduction of publicly trusted TLS certificate lifetimes to 47 days, while Let's Encrypt is moving toward six-day certificates and says automation is essential for short-lived credentials. AWS documentation shows that even managed renewal can fail because certificates are no longer in use, DNS validation records are missing, HTTP validation is misconfigured or services do not deploy a renewed certificate in time. The identifiable payer is the platform, security or site-reliability team responsible for internet-facing services across clouds, CDNs, load balancers and Kubernetes. The narrow wedge is provider-neutral renewal and deployment regression testing, failure drills and endpoint evidence rather than another certificate authority or lifecycle manager. A read-only endpoint inventory plus one staging rotation drill can test demand cheaply, and no obvious legal or technical constraint prevents a human-reviewed service using test certificates and non-production environments.",
+    "evidence": [
+      {
+        "title": "Ballot SC081v3: Introduce Schedule of Reducing Validity and Data Reuse Periods",
+        "url": "https://cabforum.org/2025/04/11/ballot-sc081v3-introduce-schedule-of-reducing-validity-and-data-reuse-periods/",
+        "kind": "standard"
+      },
+      {
+        "title": "Certificate Lifetime Rationale and Plans",
+        "url": "https://letsencrypt.org/docs/cert-lifetimes/",
+        "kind": "official"
+      },
+      {
+        "title": "Troubleshoot managed certificate renewal",
+        "url": "https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting-renewal.html",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Inventory public endpoints and run a staging renewal-and-deployment drill with 15 digital-service teams operating mixed certificate infrastructure; continue only if three pay for a fixed-scope pilot that catches renewal or deployment failures their current lifecycle tools miss.",
+    "promotedInvestigationId": null
   }
 ]
 
