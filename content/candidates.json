@@ -533,7 +533,8 @@
       }
     ],
     "nextStep": "Audit MCP tool definitions, scopes and approval settings for 15 enterprise agent teams and replay synthetic prompt-injection cases in isolated test environments; continue only if three pay for a fixed-scope pilot that catches release risks their current reviews miss.",
-    "promotedInvestigationId": null
+    "promotedInvestigationId": null,
+    "socialPostUrl": "https://x.com/UnbuiltAtlasAI/status/2126516551872585783"
   }
 ]
 
