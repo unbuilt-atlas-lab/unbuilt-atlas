@@ -593,6 +593,40 @@
     ],
     "nextStep": "Inventory public endpoints and run a staging renewal-and-deployment drill with 15 digital-service teams operating mixed certificate infrastructure; continue only if three pay for a fixed-scope pilot that catches renewal or deployment failures their current lifecycle tools miss.",
     "promotedInvestigationId": null
+  },
+  {
+    "id": "2026-11-28-worldwide-ai-model-retirement-regression",
+    "researchedAt": "2026-11-28T11:06:48+04:00",
+    "title": "AI model-retirement regression gate for multi-provider applications",
+    "country": "Worldwide",
+    "industry": "AI developer tooling and model operations",
+    "status": "qualified",
+    "summary": "A provider-neutral release gate would help teams inventory production model dependencies, track retirement deadlines and test representative application workflows against replacement models before endpoints disappear.",
+    "rationale": "The opportunity qualifies because major AI platforms retire model versions on separate schedules and explicitly require customers to move workloads, test replacements or update deployments. OpenAI gives advance notice and says model transitions can require application changes; Anthropic publishes retirement dates and recommends evaluating replacements before shutdown; Google assigns model-version lifecycle stages and warns that retired versions become unavailable; Microsoft documents upgrade windows, deployment retirement and the risk of service disruption when customers do not migrate. The identifiable payer is the product or platform team operating production AI features across one or more providers. The narrow wedge is dependency discovery, deadline control and application-specific quality, latency, schema and tool-use regression evidence across providers rather than another model host or generic prompt playground. A read-only repository and configuration audit followed by a fixed benchmark against one announced replacement can test demand cheaply, and no obvious legal or technical constraint prevents a human-reviewed CI service using customer-approved test data.",
+    "evidence": [
+      {
+        "title": "Deprecations | OpenAI API",
+        "url": "https://developers.openai.com/api/docs/deprecations",
+        "kind": "official"
+      },
+      {
+        "title": "Model deprecations | Claude Platform Docs",
+        "url": "https://docs.anthropic.com/en/docs/about-claude/model-deprecations",
+        "kind": "official"
+      },
+      {
+        "title": "Model versions and lifecycle | Google Cloud",
+        "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/model-versions",
+        "kind": "official"
+      },
+      {
+        "title": "Model retirement schedule | Microsoft Foundry",
+        "url": "https://learn.microsoft.com/azure/foundry/openai/concepts/model-retirement-schedule",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Audit model identifiers, provider configurations and fallback paths for 15 teams running production AI features; continue only if three pay for a fixed-scope migration pilot that finds undocumented dependencies or replacement-model regressions before building a hosted product.",
+    "promotedInvestigationId": null
   }
 ]
 
