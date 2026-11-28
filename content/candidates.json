@@ -500,6 +500,40 @@
     "nextStep": "Audit publishing credentials and CI workflows across 15 organizations that maintain at least 10 npm packages; continue only if three pay for a fixed-scope migration pilot that finds legacy tokens, configuration gaps or provenance failures before building a hosted product.",
     "promotedInvestigationId": null,
     "socialPostUrl": "https://x.com/UnbuiltAtlasAI/status/2126484653276332509"
+  },
+  {
+    "id": "2026-11-28-worldwide-mcp-security-regression",
+    "researchedAt": "2026-11-28T07:07:43+04:00",
+    "title": "MCP security regression gate for enterprise agent teams",
+    "country": "Worldwide",
+    "industry": "AI agent security and developer tooling",
+    "status": "qualified",
+    "summary": "A vendor-neutral release gate would help teams deploying MCP-connected agents detect tool-schema drift, overbroad permissions, unsafe approval settings and prompt-injection data paths before production releases.",
+    "rationale": "The opportunity qualifies because MCP-connected agents can expose sensitive context to malicious servers and can be induced by untrusted content to leak data or take unintended actions. OWASP identifies tool poisoning, post-approval tool-definition changes, excessive permissions and cross-server escalation, and recommends hashing complete tool definitions, reviewing changes and preserving explicit invocation approval. The identifiable payer is an enterprise team deploying agents that can reach business systems. The narrow wedge is a vendor-neutral CI and predeployment regression gate that snapshots schemas and scopes, checks approval policy and replays synthetic injection scenarios across local and remote MCP integrations rather than another runtime firewall. Microsoft's preview MCP firewall confirms demand for centralized controls but is tied to its network and identity stack, leaving room for portable release testing. A read-only audit and synthetic replay can test demand cheaply, and no obvious legal or technical constraint prevents a harness that uses test credentials and executes no production actions.",
+    "evidence": [
+      {
+        "title": "MCP servers | OpenAI API",
+        "url": "https://developers.openai.com/api/docs/guides/tools-connectors-mcp",
+        "kind": "official"
+      },
+      {
+        "title": "Safety in building agents | OpenAI API",
+        "url": "https://developers.openai.com/api/docs/guides/agent-builder-safety",
+        "kind": "official"
+      },
+      {
+        "title": "MCP Security Cheat Sheet",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/MCP_Security_Cheat_Sheet.html",
+        "kind": "standard"
+      },
+      {
+        "title": "Configure Global Secure Access MCP firewall to secure MCP traffic",
+        "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-mcp-firewall",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Audit MCP tool definitions, scopes and approval settings for 15 enterprise agent teams and replay synthetic prompt-injection cases in isolated test environments; continue only if three pay for a fixed-scope pilot that catches release risks their current reviews miss.",
+    "promotedInvestigationId": null
   }
 ]
 
