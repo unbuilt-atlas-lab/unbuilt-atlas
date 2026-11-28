@@ -661,6 +661,35 @@
     ],
     "nextStep": "Run a staging passkey and recovery test matrix with 15 consumer application teams across Apple, Android, Windows and common browser combinations; continue only if three pay for a fixed-scope pilot that catches journey failures or recovery weaknesses their current QA misses.",
     "promotedInvestigationId": null
+  },
+  {
+    "id": "2026-11-28-worldwide-android-adaptive-release-gate",
+    "researchedAt": "2026-11-28T15:06:45+04:00",
+    "title": "Adaptive-layout release gate for Android app publishers",
+    "country": "Worldwide",
+    "industry": "Android developer tooling and app quality",
+    "status": "qualified",
+    "summary": "A CI-connected release gate would help Android app publishers exercise critical journeys across foldable postures, rotations, resizing and multi-window states, preserve continuity evidence and prepare compliant store screenshots before Google Play submissions.",
+    "rationale": "The opportunity qualifies because Google Play will require new apps and updates to meet Tier 3 adaptive quality and include foldable screenshots from April 2027; apps below the quality bar will be unable to publish or update. Tier 3 requires full-screen behavior without letterboxing or compatibility mode, state continuity through rotation, folding, unfolding and resizing, and functional multi-window operation. The identifiable payer is an Android app publisher that depends on recurring Play releases. The narrow wedge is app-specific critical-journey and state-continuity regression with versioned evidence and screenshot readiness rather than another emulator or device cloud. Google's pre-launch report is useful but does not guarantee that testing identifies every issue, leaving room for deterministic product-specific flows. A read-only build audit and scripted foldable test matrix can falsify demand cheaply, and no obvious legal or technical constraint prevents a human-reviewed CI service using test accounts and non-production data.",
+    "evidence": [
+      {
+        "title": "Elevating apps: New adaptive quality standards on Google Play",
+        "url": "https://developer.android.com/blog/posts/google-play-adaptive-quality-standards",
+        "kind": "official"
+      },
+      {
+        "title": "Tier 3 — Adaptive ready",
+        "url": "https://developer.android.com/develop/adaptive-apps/quality-guidelines/adaptive-app-quality/tier-3",
+        "kind": "official"
+      },
+      {
+        "title": "Understand your pre-launch report",
+        "url": "https://support.google.com/googleplay/android-developer/answer/9844487",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Audit 15 frequently updated Android apps and run their critical journeys across the official foldable configurations; continue only if three publishers pay for a fixed-scope pilot that catches adaptive-layout or state-continuity failures their current Play checks miss.",
+    "promotedInvestigationId": null
   }
 ]
 
