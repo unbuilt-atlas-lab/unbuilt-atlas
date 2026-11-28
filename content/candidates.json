@@ -535,6 +535,35 @@
     "nextStep": "Audit MCP tool definitions, scopes and approval settings for 15 enterprise agent teams and replay synthetic prompt-injection cases in isolated test environments; continue only if three pay for a fixed-scope pilot that catches release risks their current reviews miss.",
     "promotedInvestigationId": null,
     "socialPostUrl": "https://x.com/UnbuiltAtlasAI/status/2126516551872585783"
+  },
+  {
+    "id": "2026-11-28-worldwide-pqc-supplier-evidence",
+    "researchedAt": "2026-11-28T08:07:25+04:00",
+    "title": "PQC supplier-readiness evidence workspace for financial institutions",
+    "country": "Worldwide",
+    "industry": "Financial cybersecurity and cryptographic migration",
+    "status": "qualified",
+    "summary": "A supplier-evidence workspace would help financial institutions collect technology-vendor post-quantum migration roadmaps, map them to cryptographic dependencies, track milestones and preserve review evidence across long transition programmes.",
+    "rationale": "The opportunity qualifies because NIST's transition plan sets deprecation and removal timelines for quantum-vulnerable standards, while the UK NCSC says large organisations should already be discovering cryptographic dependencies and engaging suppliers before completing migration by 2035. The G7 financial-sector roadmap makes vendor dependency explicit: institutions should inventory critical third parties, obtain detailed migration roadmaps from vendors and maintain transparent progress reporting. The identifiable payer is the financial institution responsible for operational resilience across externally supplied software, hardware and network services. The narrow wedge is structured supplier-roadmap intake, dependency-to-vendor mapping, milestone drift and evidence management rather than cryptographic implementation or generic third-party risk software. A manual review of existing vendor plans can test demand cheaply, and no obvious legal or technical constraint prevents a human-reviewed coordination product that stores no cryptographic keys and makes no certification claims.",
+    "evidence": [
+      {
+        "title": "Transition to Post-Quantum Cryptography Standards",
+        "url": "https://www.nist.gov/publications/transition-post-quantum-cryptography-standards",
+        "kind": "official"
+      },
+      {
+        "title": "Timelines for migration to post-quantum cryptography",
+        "url": "https://www.ncsc.gov.uk/pdfs/guidance/pqc-migration-timelines.pdf",
+        "kind": "official"
+      },
+      {
+        "title": "G7 roadmap for transition to post-quantum cryptography in the financial sector",
+        "url": "https://home.treasury.gov/system/files/136/G7-CEG-Quantum-Roadmap.pdf",
+        "kind": "official"
+      }
+    ],
+    "nextStep": "Review current PQC roadmaps and dependency evidence with 15 financial institutions; continue only if three pay for a fixed-scope pilot that identifies missing supplier plans, milestone drift or unmapped cryptographic dependencies before building a hosted workspace.",
+    "promotedInvestigationId": null
   }
 ]
 
