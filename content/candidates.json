@@ -498,7 +498,8 @@
       }
     ],
     "nextStep": "Audit publishing credentials and CI workflows across 15 organizations that maintain at least 10 npm packages; continue only if three pay for a fixed-scope migration pilot that finds legacy tokens, configuration gaps or provenance failures before building a hosted product.",
-    "promotedInvestigationId": null
+    "promotedInvestigationId": null,
+    "socialPostUrl": "https://x.com/UnbuiltAtlasAI/status/2126484653276332509"
   }
 ]
 
